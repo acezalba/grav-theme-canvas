@@ -2,6 +2,8 @@
 
 A starter theme for Grav CMS. Designed for small, text-heavy personal sites and blogs. Uses [sanitize.css](https://csstools.github.io/sanitize.css/) and a customized [simple.css](https://simplecss.org/). Mostly classless.
 
+![Canvas Screenshot](screenshot.jpg)
+
 ## Features
 
 - Support for the following templates:
@@ -20,14 +22,18 @@ A starter theme for Grav CMS. Designed for small, text-heavy personal sites and 
 
 ## Installation
 
-The current iteration of Canvas can only be installed via cloning the directory to your `user/themes`. Activate it by editing or adding the following line in your `user/config/system.yaml`
+The current iteration of Canvas can only be installed via cloning the repository to your `user/themes`. Activate it by editing or adding the following line in your `user/config/system.yaml`.
 
 ```yaml
 pages:
 	theme: canvas
 ```
 
-Clear your cache via the Admin panel or through `bin/grav cache` in your project terminal. Copy the default `canvas.yaml` bundled with the theme to your `user/config/themes` to start customizing the colors of your site using hex codes. However, editing the site via the Grav Admin panel is recommended to use features not included in the theme config file.
+Clear your cache via the Admin panel or through `bin/grav cache` in your project terminal. Load your page to see your Canvas site come to life.
+
+Copy the default `canvas.yaml` bundled with the theme to your `user/config/themes` to start customizing the colors of your site using hex codes.
+
+However, editing the theme settings via the Grav Admin panel is recommended to use features not included in the default theme config file, such as favicon and preview image customization.
 
 ## Upcoming Features
 
