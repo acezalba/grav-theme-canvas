@@ -1,0 +1,191 @@
+/* MAIN CSS */
+
+/* RESET.CSS OVERRIDES */
+
+/* Change SIMPLE.css variable values for light/dark mode */
+
+:root {
+/*    --body-font: serif;*/
+    --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    /* Default (light) theme */
+    --bg: #fff;
+    --accent-bg: #f5f7ff;
+    --text: #212121;
+    --text-light: #585858;
+    --border: #d8dae1;
+    --accent: #004D40;
+    --code: #795548;
+    --preformatted: #444;
+    --marked: #FFEE58;
+    --disabled: #efefef;
+
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --bg: #212121;
+        --accent-bg: #2b2b2b;
+        --text: #dcdcdc;
+        --text-light: #ababab;
+        --border: #666;
+        --accent: #00BCD4;
+        --code: #EA80FC;
+        --preformatted: #ccc;
+        --disabled: #111;
+
+    }
+
+    img,
+    video {
+        opacity: 0.8;
+    }
+}
+
+body {
+    grid-template-columns: 2fr min(45rem, 90%) 1fr;
+    min-height: 100vh;
+}
+
+body > header {
+    background-color: var(--bg);
+    padding: 5rem 0 2rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    margin: 1rem;
+}
+
+body > header h1 {
+    border-top: 0.5rem solid var(--accent);
+    padding-top: 2rem;
+}
+
+body > header p {
+    color: var(--text-light);
+}
+
+header > nav ul,
+header > nav ol {
+    padding: 0;
+    justify-content: flex-start;
+}
+
+nav a:first-child {
+    margin-left: 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h4, h5, h6 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    color: var(--text-light);
+}
+
+h6 {
+    font-size: 1.3rem;
+}
+
+header a,
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus{
+    text-decoration: underline;
+}
+
+body > footer {
+    
+    text-align: right;
+}
+
+article {
+    border: none;
+}
+
+article h2 {
+/*    border-top: 5px solid var(--accent);*/
+    padding-top: 1rem;
+}
+
+article h3 {
+    color: var(--text-light);
+    padding-bottom: 0.5rem;
+}
+
+/* fix for markdown render of img inside p tags */
+p > img {
+    object-fit: cover;
+    min-width: 50%;
+}
+
+aside {
+    font-size: 1rem;
+    width: 30%;
+    padding: 0 15px;
+    float: left;
+    position: relative;
+    left: -35%;
+    margin-right: -35%;
+    text-align: right;
+    border: none;
+    background: none;
+    color: var(--text-light);
+}
+
+/* Make aside full-width on mobile */
+@media only screen and (max-width: 1080px) {
+    aside {
+        width: 100%;
+        float: none;
+        position: inherit;
+        text-align: left;
+        padding: 1rem;
+        background-color: var(--accent-bg);
+        border: 1px solid var(--border);
+        margin-left: 0;
+        color: var(--accent);
+    }
+}
+
+form label + *:not(label,br) {
+    margin-bottom: 1.2rem;
+}
+
+hr {
+    height: 2rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--text-light);
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 25vw;
+}
+
+.error {
+    border: none;
+}
+
+.error > * {
+    margin: 1rem;
+}
+
+.content-footer {
+    text-align: right;
+    padding-top: 3rem;
+    color: var(--text-light);
+    text-decoration: none;
+}
+

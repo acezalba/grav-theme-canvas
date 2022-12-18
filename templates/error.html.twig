@@ -1,0 +1,20 @@
+{# ERROR
+   Part of recommended generic templates
+   Output an error page for the site visitor
+#}
+
+{% embed 'partials/base.html.twig' %}
+
+{% block header %}
+   <header class="error">
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.summary|raw }}</p>
+      <a href="{{ home_url }}">Back to home</a>
+   </header>
+{% endblock header %}
+
+
+{% block content %}
+{% endblock %}
+
+{% endembed %}

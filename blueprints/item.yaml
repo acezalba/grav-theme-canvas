@@ -1,0 +1,44 @@
+title: Item
+extends@:
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        page_settings:
+          fields:
+            header.place_attributes:
+              type: radio
+              label: Move page attributes to:
+              options:
+                header: Header
+                content_footer: Footer
+              default: header
+
+
+# form:
+#   fields:
+#     tabs:
+#       fields:        
+#         item_settings:
+#           type: tab
+#           title: Customize item
+#           fields:
+              # page_attributes_section:
+              #   type: section
+              #   title: Position of page attributes
+              #   underline: true
+              #   fields:
+              #     page_attributes_description:
+              #       type: display
+              #       label: How it works
+              #       content: `item` templates displays select page attributes in the header. Change settings below to move it to the bottom of the content.
+              #     header.place_attributes:
+              #       type: radio
+              #       label: Move page attributes to:
+              #       options:
+              #         header: Header
+              #         content_footer: Footer
+              #       default: header

@@ -1,0 +1,228 @@
+# THEME METADATA
+
+name: Canvas
+slug: canvas
+type: theme
+version: 0.0.1
+description: Experimental theme to learn Grav logic and set best beginner practices
+icon: star
+author:
+    name: Ace Z. Alba
+    url: https://www.acezalba.com
+homepage: https://www.acezalba.com
+keywords: skeleton, beginner, tutorial
+bugs: https://www.acezalba.com
+license: MIT
+dependencies:
+  - { name: grav, version: '>=1.7' }
+
+# THEME_SPECIFIC SETTINGS
+
+form:
+  validation: loose
+  fields:
+    tabs:
+      type: tabs
+      active: 0
+      fields:
+        color: # color overrides
+          type: tab
+          title: Colors
+          fields:
+            color.theme:
+              type: section
+              underline: true
+              title: Theme behavior
+              fields:
+                color.theme.behavior:
+                  type: radio
+                  label: Modify how the theme behaves
+                  options:
+                    theme_default: Theme Default (change theme according to device settings)
+                    light: Use light theme only
+                    dark: Use dark theme only
+                  default: theme_default
+            color.custom:
+              title: Customize theme colors
+              type: section
+              underline: true
+              fields:
+                columns:
+                  type: columns
+                  fields:
+                    light_column:
+                      type: column
+                      fields:
+                        column_title:
+                          type: section
+                          underline: true
+                          title: Light theme
+                        color.custom.light.bg:
+                          type: colorpicker
+                          label: Background color
+                          default: '#fffff'
+                        color.custom.light.accent_bg:
+                          type: colorpicker
+                          label: Background accent
+                          default: '#f5f7ff'
+                        color.custom.light.text:
+                          type: colorpicker
+                          label: Text color
+                          default: '#212121'
+                        color.custom.light.text_light:
+                          type: colorpicker
+                          label: Light text
+                          default: '#585858'
+                        color.custom.light.border:
+                          type: colorpicker
+                          label: Borders
+                          default: '#d8dae1'
+                        color.custom.light.accent:
+                          type: colorpicker
+                          label: Accent color
+                          default: '#004d40'
+                        color.custom.light.code:
+                          type: colorpicker
+                          label: Code snippets
+                          default: '#795548'
+                        color.custom.light.preformatted:
+                          type: colorpicker
+                          label: Preformatted text
+                          default: '#444444'
+                        color.custom.light.disabled:
+                          type: colorpicker
+                          label: Disabled text
+                          default: '#efefef'
+                    dark_column:
+                      name: dark
+                      type: column
+                      fields:
+                        column_title:
+                          type: section
+                          underline: true
+                          title: Dark theme
+                        color.custom.dark.bg:
+                          type: colorpicker
+                          label: Background color
+                          default: '#212121'
+                        color.custom.dark.accent_bg:
+                          type: colorpicker
+                          label: Background accent
+                          default: '#2b2b2b'
+                        color.custom.dark.text:
+                          type: colorpicker
+                          label: Text color
+                          default: '#dcdcdc'
+                        color.custom.dark.text_light:
+                          type: colorpicker
+                          label: Light text
+                          default: '#ababab'
+                        color.custom.dark.border:
+                          type: colorpicker
+                          label: Borders
+                          default: '#666'
+                        color.custom.dark.accent:
+                          type: colorpicker
+                          label: Accent color
+                          default: '#00bcd4'
+                        color.custom.dark.code:
+                          type: colorpicker
+                          label: Code snippets
+                          default: '#ea80fc'
+                        color.custom.dark.preformatted:
+                          type: colorpicker
+                          label: Preformatted text
+                          default: '#cccccc'
+                        color.custom.dark.disabled:
+                          type: colorpicker
+                          label: Disabled text
+                          default: '#111111'
+        layout: # customize layout sections
+          type: tab
+          title: Layout
+          fields:
+            navigation_options:
+              type: section
+              title: Navigation Bar
+              underline: true
+              fields:
+                layout.navigation:
+                  type: radio
+                  label: Place the navbar where?
+                  options:
+                    header: Header
+                    footer: Footer
+                  default: header
+            attribution_options:
+              type: section
+              title: Footer Text Options
+              underline: true
+              fields:
+                layout.custom_attribution:
+                    type: text
+                    autofocus: true
+                    label: Custom attribution
+                    help: A one-liner section for copyright or similar.
+                    markdown: true
+                layout.disable_theme_attribution:
+                  type: toggle
+                  label: Disable theme attribution?
+                  help: Please keep it on.
+                  highlight: 0
+                  default: 0
+                  options:
+                    1: Yes
+                    0: No
+                  validate:
+                    type: bool
+            template_options:
+              type: section
+              title: Template Options
+              underline: true
+              fields:
+                template_options_description:
+                  type: display
+                  label: How it works
+                  content: Some templates have layout settings. Change their settings below to define their defaults.
+                layout.item_place_attributes:
+                  type: radio
+                  label: Move page attributes in `item` templates to:
+                  options:
+                    header: Header
+                    content_footer: Footer
+                  default: header
+        media: # load user assets for the theme
+          type: tab
+          title: Media
+          fields:
+            custom_favicon:
+              type: section
+              title: Custom Favicon
+              underline: true
+              fields:
+                media.favicon:
+                  type: file
+                  label: Upload your custom favicon
+                  destination: 'theme://assets/user_favicon/'
+                  multiple: false
+                  avoid_overwriting: yes
+                  limit: 1
+                  filesize: 1
+                  accept:
+                    - image/*
+            custom_preview_image:
+              type: section
+              title: Custom Preview Image
+              underline: true
+              fields:
+                media.site_preview_image:
+                  type: file
+                  label: Upload your custom preview image.
+                  help: This is used as your site's preview image for Facebook (OpenGraph) and Twitter when you have no preview-image set per page. Defaults to a theme-based preview image if none uploaded.
+                  destination: 'theme://assets/user_image/'
+                  multiple: false
+                  avoid_overwriting: false
+                  limit: 1
+                  filesize: 1
+                  accept:
+                    - image/*

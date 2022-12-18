@@ -1,0 +1,20 @@
+<header>
+  {% if page.home() %}
+    <h1><a href="{{ home_url }}">{{ site.title }}</a></h1>
+    <p>{{ meta_description }}</p>
+  {% elseif page.template() == 'item' and item_attr_placement == 'header' %}
+    <h1><a href="{{ base_url }}">{{ page.title }}</a></h1> 
+    {% include 'partials/item-attributes.html.twig' %}
+  {% else %}
+    <h1><a href="{{ base_url }}">{{ page.title }}</a></h1>
+    {% if enable_subtitle %}
+      <p>{{ page.summary|raw }}</p>
+    {% endif %}
+  {% endif %}
+
+  {% if theme_config.layout.navigation == 'header' %}
+    {% block navigation %}
+      {% include 'partials/navigation.html.twig' %}
+    {% endblock navigation %}
+  {% endif %}
+</header>

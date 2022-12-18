@@ -1,0 +1,21 @@
+{# ITEM (i.e. blogposts)
+   Part of recommended generic templates
+   Preferred child template for
+   BLOG directories
+#}
+
+{% embed 'partials/base.html.twig' %}
+
+{% block content %}
+<article>
+{{ page.content|raw }}
+{% if item_attr_placement == 'content_footer' %}
+  <div class="content-footer">
+    {% include 'partials/item-attributes.html.twig' %}
+  </div>
+
+{% endif %}
+</article>
+{% endblock %}
+
+{% endembed %}

@@ -1,0 +1,7 @@
+<nav>
+  <ul>
+  {% for p in pages.children.visible('folder','asc') %}
+    <li><a href="{{ p.url }}">{{ p.title|e }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>

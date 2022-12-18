@@ -1,0 +1,14 @@
+{# DEFAULT
+   Part of recommended generic templates
+   Output page content
+#}
+
+{% embed 'partials/base.html.twig' %}
+
+{% block content %}
+<article>
+  {{ page.content|raw }}
+</article>
+{% endblock content %}
+
+{% endembed %}

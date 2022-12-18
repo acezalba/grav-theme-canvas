@@ -1,0 +1,27 @@
+<footer {% if page.template() == 'error' %}class="error"{% endif %}>
+
+  {% if page.template() == 'error' or 
+    theme_config.layout.navigation == 'footer' %}
+    {% include 'partials/navigation.html.twig' %}
+  {% endif %}
+
+  <p>
+  {% block site_copyright %}
+	{{ site.title }} &copy; {{ 'now' | date('Y') }}
+  {% endblock site_copyright %}
+  {% block custom_attribution %}
+    {% if theme_config.layout.custom_attribution %}
+         | {{ theme_config.layout.custom_attribution }}
+    {% endif %}
+  {% endblock custom_attribution %}
+  </p>
+  
+  {% block theme_attribution %}
+    {% if not theme_config.layout.disable_theme_attribution %}
+         <p><a href="{{ grav.theme.homepage }}">{{ grav.theme.name }}</a> theme made with ❤️ by <a href="{{grav.theme.author.url}}">{{ grav.theme.author.name }}</a></p>
+    {% endif %}
+  {% endblock theme_attribution %}
+  
+
+  
+</footer>

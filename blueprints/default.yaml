@@ -1,0 +1,72 @@
+# Page-specific settings for default templates
+extends@: default
+
+form:
+  validation: loose
+  fields:
+    tabs:
+      fields:        
+        page_settings:
+          type: tab
+          title: Customize page
+          fields:
+            preview_image_section:
+              type: section
+              title: Preview Image
+              underline: true
+              fields:
+                preview_image_directions:
+                  type: display
+                  label: How this works
+                  markdown: true
+                  content: You can add a custom Preview Image per page for sharing on social sites. If no custom image is uploaded, it will use the first image of the page. If the page has no photos, it will use the preview image defined in the theme settings. A `1200×630` image size is recommended.
+                header.preview_image_enable:
+                  type: toggle
+                  label: Enable preview image
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: Yes
+                    0: No
+                  validate:
+                    type: bool
+                header.page_preview_image:
+                  type: file
+                  label: Upload your custom preview image.
+                  destination: 'self@'
+                  multiple: false
+                  avoid_overwriting: false
+                  limit: 1
+                  filesize: 1
+                  accept:
+                    - image/*
+            header_subtitle_section:
+              type: section
+              title: Header Subtitle
+              underline: true
+              fields:
+                header_subtitle_description:
+                  type: display
+                  label: How this works
+                  markdown: true
+                  content: In pages that are not set to the home page, the header uses the page summary as a subtitle. Use the settings below to disable it.
+                header.enable_subtitle:
+                  type: toggle
+                  label: Turn header subtitle on or off
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: On
+                    0: Off
+                  validate:
+                    type: bool
+            template_specific_section:
+              type: section
+              title: Template Settings
+              underline: true
+              fields:
+                template_specific_description:
+                  type: display
+                  label: Description
+                  markdown: true
+                  content: Any template-specific settings will be listed below.

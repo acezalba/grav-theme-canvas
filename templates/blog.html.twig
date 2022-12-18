@@ -1,0 +1,30 @@
+{# BLOG (i.e. a page loop)
+   Part of recommended generic templates
+   Turns a directory into a BLOG 
+   to output a collection of child ITEM pages
+#}
+
+{% embed 'partials/base.html.twig' %}
+
+{% set inner_children = page.collection()|length > 0 ? page.collection() : page.children.visible('folder','asc') %}
+
+{% block content %}
+
+<article>
+{{page.content|raw}}<br><hr>
+  {% if inner_children %}
+    {% set inner_children = inner_children.order(page.header.content.order.by|default(system.pages.order.by), page.header.content.order.dir|default(system.pages.order.dir)) %}
+    {% for child in inner_children %}
+    <h3><a href="{{ child.url }}">{{ child.title|e }}</a></h3>
+    <p>Published on {{child.date|date("F j, Y")}}.</p>
+    <p>{{ child.summary|raw }}</p>
+    <br>
+    <em><a href="{{ child.url }}">Continue reading...</a></em>
+    <hr>
+  {% endfor %}
+  {% endif %}
+
+</article>
+{% endblock %}
+
+{% endembed %}

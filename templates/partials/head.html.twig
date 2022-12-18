@@ -1,0 +1,106 @@
+{# Refer to base.html.twig for variables used #}
+{# Browsers Meta #}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{# SEO Meta #}
+<title>{% if meta_title %}{{ meta_title }}{% endif %}</title>
+<link rel="canonical" href="{{ canonical_url }}">
+{% if favicon_file_url %}
+<link rel="icon" type="image/png" href="{{ favicon_file_url }}" >
+<link rel="apple-touch-icon" href="{{ favicon_file_url }}" >
+<link rel="mask-icon" href="{{ favicon_file_url }}">
+{% endif %}
+{% if author_name %}
+<meta name="author" content="{{ author_name }}" />
+{% endif %}
+
+{# Load Site and Page Specific Metadata Overloads #}
+{% for meta in page.metadata %}
+<meta {% if meta.name %}name="{{ meta.name|e }}" {% endif %}
+{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv|e }}" {% endif %}
+{% if meta.charset %}charset="{{ meta.charset|e }}" {% endif %}
+{% if meta.property %}property="{{ meta.property|e }}" {% endif %}
+{% if meta.content %}content="{{ meta.content|raw }}" {% endif %}>
+{% endfor %}
+      
+{# Social Media Metadata #}
+<meta property="og:type" content="website">
+<meta property="twitter:card" content="summary_large_image">
+{% if canonical_url %}
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="twitter:url" content="{{ canonical_url }}">
+{% endif %}
+{% if meta_title %}
+<meta itemprop="name" content="{{ meta_title }}">
+<meta property="og:title" content="{{ meta_title }}">
+<meta property="twitter:title" content="{{ meta_title }}">
+{% endif %}
+{% if meta_description %}
+<meta property="og:description" content="{{ meta_description }}">
+<meta property="twitter:description" content="{{ meta_description }}">
+<meta itemprop="description" content="{{ meta_description }}">
+{% endif %}
+{% if preview_img_url %}
+<meta property="og:image" content="{{ preview_img_url }}">
+<meta property="twitter:image" content="{{ preview_img_url }}">
+<meta itemprop="image" content="{{ preview_img_url }}">
+{% endif %}
+{% if author_name %}
+<meta property="article:author" content="{{ author_name }}">
+{% endif %}
+
+{# Basic Schema.org json #}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "headline": "{{ page_title }}",
+  "name": "{{ site_title }}",
+  "url": "{{ canonical_url }}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ preview_img_url }}",
+  },
+  "author": {
+    "@type": "Person",
+    "name": "{{ author_name }}"
+  },
+  "datePublished": "{{ date_published }}",
+  "description": "{{ meta_description }}"
+}
+</script>
+
+{# Asset Files #}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ url('theme://assets/css/reset.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ url('theme://assets/css/base.css') }}" >
+
+{% endblock stylesheets %}
+
+{% block custom_css %}
+<style>
+  {% if theme_config.color.theme.behavior == 'light' %}
+      {% include 'partials/custom-lighttheme.html.twig' %}
+  {% endif %}
+
+  {% if theme_config.color.theme.behavior == 'dark' %}
+      {% include 'partials/custom-darktheme.html.twig' %}
+  {% endif %}
+
+  {% if theme_config.color.theme.behavior == 'theme_default' %}
+      {% include 'partials/custom-lighttheme.html.twig' %}
+      @media (prefers-color-scheme: dark) {
+        {% include 'partials/custom-darktheme.html.twig' %}
+      }
+  {% endif %}
+</style>
+{% endblock custom_css %}
+
+{# necessary for debugging to work #}
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}

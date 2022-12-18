@@ -1,0 +1,14 @@
+  <p>By {{ author_name }}</p>
+  <p>Published on {{ page.date|date("F j, Y, g:i a") }}</p>
+  {% if page.taxonomy.category %}
+    <p>Category: 
+    {% for category in page.taxonomy.category %}
+      <a href="{{ page.parent.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}">{{ category }}</a>{{ not loop.last ? ',' : '' }}
+    {% endfor %}</p>
+  {% endif %}
+  {% if page.taxonomy.tag %}
+    <p>Tag: 
+    {% for tag in page.taxonomy.tag %}
+      <a href="{{ page.parent.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>{{ not loop.last ? ',' : '' }}
+    {% endfor %}</p> 
+  {% endif %}
