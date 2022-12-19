@@ -20,3 +20,9 @@
 
 1. [](#bugfix)
 	* Fixed handling of page subtitles across templates. Page summary should now be displayed separately with the page content.
+	
+# v0.2.1
+## 12/19/2022
+
+1. [](#bugfix)
+	* Fixed handling of page content in home pages.
