@@ -107,7 +107,9 @@ itemscope itemtype="https://schema.org/Website">
 {% endblock header %}
 
 {% block content %}
-  {{ page.content|raw }}
+<article>
+  {% include 'partials/content.html.twig' %}
+</article>
 {% endblock content %}
 
 {% block footer %}

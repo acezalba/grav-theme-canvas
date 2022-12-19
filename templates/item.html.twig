@@ -8,7 +8,7 @@
 
 {% block content %}
 <article>
-{{ page.content|raw }}
+{% include 'partials/content.html.twig' %}
 {% if item_attr_placement == 'content_footer' %}
   <div class="content-footer">
     {% include 'partials/item-attributes.html.twig' %}

@@ -1,0 +1,8 @@
+  {% if (page.header.summary.enabled or page.header.summary.enabled is null) and 
+        (enable_subtitle is null or enable_subtitle) and
+        (page.template() != 'item') %}
+    {% set content = page.content|slice(page.summary|length) %}
+    {{ content|raw }}
+  {% else %}
+    {{ page.content|raw }}
+  {% endif %}
