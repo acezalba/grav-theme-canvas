@@ -1,12 +1,23 @@
-# v0.1.0
-## 12/18/2022
+# v0.3.0
+## 01/06/2023
 
 1. [](#new)
-	* Changelog started
-	* Built the theme.
-	* Added support for `default`, `error`, `blog` and `item` templates.
-	* Added theme and page configurations.
+	* Added template aliases `archive` (blog) , `article` (item), `folder` (blog), `index` (blog), `page` (default), and `post` (item), 
+2. [](#bugfix)
+	* Fixed chronology of the changelog file
+
+# v0.2.1
+## 12/19/2022
+
+1. [](#bugfix)
+	* Fixed handling of page content in home pages.
 	
+# v0.2.0
+## 12/19/2022
+
+1. [](#bugfix)
+	* Fixed handling of page subtitles across templates. Page summary should now be displayed separately with the page content.
+
 # v0.1.1
 ## 12/18/2022
 
@@ -15,14 +26,15 @@
 	* Added dates to `CHANGELOG.md`
 
 
-# v0.2.0
-## 12/19/2022
+# v0.1.0
+## 12/18/2022
 
-1. [](#bugfix)
-	* Fixed handling of page subtitles across templates. Page summary should now be displayed separately with the page content.
+1. [](#new)
+	* Changelog started
+	* Built the theme.
+	* Added support for `default`, `error`, `blog` and `item` templates.
+	* Added theme and page configurations.
+
+
+
 	
-# v0.2.1
-## 12/19/2022
-
-1. [](#bugfix)
-	* Fixed handling of page content in home pages.
