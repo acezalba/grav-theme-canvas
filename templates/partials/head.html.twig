@@ -41,10 +41,10 @@
 <meta property="twitter:description" content="{{ meta_description }}">
 <meta itemprop="description" content="{{ meta_description }}">
 {% endif %}
-{% if preview_img_url %}
-<meta property="og:image" content="{{ preview_img_url }}">
-<meta property="twitter:image" content="{{ preview_img_url }}">
-<meta itemprop="image" content="{{ preview_img_url }}">
+{% if preview_image_url %}
+<meta property="og:image" content="{{ preview_image_url }}">
+<meta property="twitter:image" content="{{ preview_image_url }}">
+<meta itemprop="image" content="{{ preview_image_url }}">
 {% endif %}
 {% if author_name %}
 <meta property="article:author" content="{{ author_name }}">
@@ -61,7 +61,7 @@
   "url": "{{ canonical_url }}",
   "image": {
     "@type": "ImageObject",
-    "url": "{{ preview_img_url }}",
+    "url": "{{ preview_image_url }}",
   },
   "author": {
     "@type": "Person",
