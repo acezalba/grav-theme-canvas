@@ -1,3 +1,9 @@
+# v0.4.0
+## 01/07/2023
+
+2. [](#bugfix)
+	* Fixed preview image bug caused by variable misspelling
+
 # v0.3.0
 ## 01/06/2023
 
