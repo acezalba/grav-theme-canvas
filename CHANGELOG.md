@@ -1,7 +1,13 @@
+# v0.4.1
+## 01/11/2023
+
+1. [](#bugfix)
+	* Fixed assets not loading caused by url mapping
+
 # v0.4.0
 ## 01/07/2023
 
-2. [](#bugfix)
+1. [](#bugfix)
 	* Fixed preview image bug caused by variable misspelling
 
 # v0.3.0
