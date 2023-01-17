@@ -47,7 +47,7 @@
 
 {# Description #}
 {% if enable_subtitle and not page.home() %}
-  {% set meta_description = page.summary %}
+  {% set meta_description = page.summary|trim|striptags|convert_encoding('UTF-8', 'HTML-ENTITIES') %}
 {% elseif site.metadata.description %}
   {% set meta_description = site.metadata.description %}
 {% else %}
