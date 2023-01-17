@@ -3,8 +3,8 @@
 name: Canvas
 slug: canvas
 type: theme
-version: 0.7.0
-description: Experimental theme to learn Grav logic and set best beginner practices
+version: 0.7.1
+description: A starter theme for Grav CMS. Designed for small, text-heavy personal sites and blogs. Uses [sanitize.css](https://csstools.github.io/sanitize.css/) and a customized [simple.css](https://simplecss.org/). Mostly classless.
 icon: star
 author:
     name: Ace Z. Alba
