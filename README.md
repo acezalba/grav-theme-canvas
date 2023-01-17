@@ -13,7 +13,7 @@ A starter theme for Grav CMS. Designed for small, text-heavy personal sites and 
 	+ `blog` - creates a list of its child pages
 		* aliases: `folder`, `archive`, `index`
 	+ `item` - intended as a child page of `blog` directories.
-		* aliases: `post.md`, `article.md`
+		* aliases: `post`, `article`
 - Supports `category` and `tag` modules for `item` templates.
 - SEO-Friendly
 	+ natively supports and generates basic OpenGraph, Twitter Card, and Schema.org metadata for your content
