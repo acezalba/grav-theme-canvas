@@ -87,29 +87,28 @@ for the feed to work, else it will just render the page #}
 {# Asset Files #}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{{ url('theme://assets/css/reset.css') }}" >
-<link rel="stylesheet" type="text/css" href="{{ url('theme://assets/css/base.css') }}" >
-
+  {% do assets.addCss('theme://assets/css/reset.css', { priority: 102 })  %}
+  {% do assets.addCss('theme://assets/css/base.css') %}
 {% endblock stylesheets %}
 
-{% block custom_css %}
-<style>
-  {% if theme_config.color.theme.behavior == 'light' %}
-      {% include 'partials/theme-light.html.twig' %}
-  {% endif %}
-
-  {% if theme_config.color.theme.behavior == 'dark' %}
-      {% include 'partials/theme-dark.html.twig' %}
-  {% endif %}
-
-  {% if theme_config.color.theme.behavior == 'theme_default' %}
-      {% include 'partials/theme-default.html.twig' %}
-  {% endif %}
-</style>
-{% endblock custom_css %}
-
-{# necessary for debugging to work #}
 {% block assets deferred %}
     {{ assets.css()|raw }}
+
+    {# Inline Theme Styling #}
+    <style>
+      {% if theme_config.color.theme.behavior == 'light' %}
+        {% include 'partials/theme-light.html.twig' %}
+      {% endif %}
+
+      {% if theme_config.color.theme.behavior == 'dark' %}
+        {% include 'partials/theme-dark.html.twig' %}
+      {% endif %}
+
+      {% if theme_config.color.theme.behavior == 'theme_default' %}
+        {% include 'partials/theme-default.html.twig' %}
+      {% endif %}
+    </style>
+
     {{ assets.js()|raw }}
 {% endblock %}
+

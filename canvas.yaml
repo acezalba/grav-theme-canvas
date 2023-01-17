@@ -1,7 +1,7 @@
 # THEME DEFAULT SETTINGS
 color:
   theme:
-    behavior: theme-default
+    behavior: 'theme_default'
   custom:
     light:
       bg: '#ffffff'
