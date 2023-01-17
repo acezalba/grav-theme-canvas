@@ -9,7 +9,8 @@
 {% block content %}
 
 <article>
-  {% include 'partials/content.html.twig' %}
+  {% set content = page.content|slice(page.summary|length) %}
+  {{ content|raw }}
   <br>
   {% include 'partials/loop.html.twig' %}
 </article>
