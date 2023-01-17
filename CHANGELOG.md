@@ -1,3 +1,9 @@
+# v0.7.1
+## 01/17/2023
+
+1. [](#bugfix)
+	* Used absolute urls for preview images.
+
 # v0.7.0
 ## 01/17/2023
 
