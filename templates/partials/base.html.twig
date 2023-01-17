@@ -77,7 +77,7 @@
   {% set preview_image_url = canonical_url ~ '/' ~ first_image %}
 {% elseif theme_config.media.site_preview_image %}
   {# Load the custom site-level preview image defined in the theme settings #}
-  {% set theme_user_dir =  url('theme://assets/user_image/') %}
+  {% set theme_user_dir =  url('user://images/') %}
   {% set preview_image_url = base_url|trim('/', 'right') ~ theme_user_dir ~ '/' ~ site_preview_image_file %}
 {% else %}
   {# Load the default preview image bundled with the theme #}
