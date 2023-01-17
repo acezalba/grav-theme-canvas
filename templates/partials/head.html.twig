@@ -93,22 +93,21 @@ for the feed to work, else it will just render the page #}
 
 {% block assets deferred %}
     {{ assets.css()|raw }}
-
-    {# Inline Theme Styling #}
-    <style>
-      {% if theme_config.color.theme.behavior == 'light' %}
-        {% include 'partials/theme-light.html.twig' %}
-      {% endif %}
-
-      {% if theme_config.color.theme.behavior == 'dark' %}
-        {% include 'partials/theme-dark.html.twig' %}
-      {% endif %}
-
-      {% if theme_config.color.theme.behavior == 'theme_default' %}
-        {% include 'partials/theme-default.html.twig' %}
-      {% endif %}
-    </style>
-
     {{ assets.js()|raw }}
 {% endblock %}
+
+{# Inline Theme Styling #}
+<style>
+  {% if theme_config.color.theme.behavior == 'light' %}
+    {% include 'partials/theme-light.html.twig' %}
+  {% endif %}
+
+  {% if theme_config.color.theme.behavior == 'dark' %}
+    {% include 'partials/theme-dark.html.twig' %}
+  {% endif %}
+
+  {% if theme_config.color.theme.behavior == 'theme_default' %}
+    {% include 'partials/theme-default.html.twig' %}
+  {% endif %}
+</style>
 
