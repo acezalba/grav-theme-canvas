@@ -3,15 +3,15 @@
 name: Canvas
 slug: canvas
 type: theme
-version: 0.6.0
+version: 0.7.0
 description: Experimental theme to learn Grav logic and set best beginner practices
 icon: star
 author:
     name: Ace Z. Alba
     url: https://www.acezalba.com
-homepage: https://www.acezalba.com
+homepage: https://github.com/acezalba/canvas
 keywords: skeleton, beginner, tutorial
-bugs: https://www.acezalba.com
+bugs: https://github.com/acezalba/canvas/issues
 license: MIT
 dependencies:
   - { name: grav, version: '>=1.7' }
@@ -205,7 +205,7 @@ form:
                 media.favicon:
                   type: file
                   label: Upload your custom favicon
-                  destination: 'theme://assets/user_favicon/'
+                  destination: 'user://images'
                   multiple: false
                   avoid_overwriting: yes
                   limit: 1
@@ -221,7 +221,7 @@ form:
                   type: file
                   label: Upload your custom preview image.
                   help: This is used as your site's preview image for Facebook (OpenGraph) and Twitter when you have no preview-image set per page. Defaults to a theme-based preview image if none uploaded.
-                  destination: 'theme://assets/user_image/'
+                  destination: 'user://images'
                   multiple: false
                   avoid_overwriting: false
                   limit: 1

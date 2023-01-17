@@ -1,3 +1,9 @@
+# v0.7.0
+## 01/17/2023
+
+1. [](#bugfix)
+	* Fixed a major bug that caused user preview images to be wiped out on update. Site-level preview images and favicons will now be uploaded to `user/images`.
+
 # v0.6.0
 ## 01/17/2023
 
