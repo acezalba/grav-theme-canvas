@@ -15,6 +15,7 @@ A starter theme for Grav CMS. Designed for small, text-heavy personal sites and 
 	+ `item` - intended as a child page of `blog` directories.
 		* aliases: `post.md`, `article.md`
 - Supports `category` and `tag` modules for `item` templates.
+- Handles
 - SEO-Friendly
 	+ natively supports and generates basic OpenGraph, Twitter Card, and Schema.org metadata for your content
 	+ allows you to customize your preview image for social sharing on a site and page level.
@@ -29,7 +30,7 @@ The current iteration of Canvas can only be installed via cloning the repository
 
 ```yaml
 pages:
-	theme: canvas
+    theme: canvas
 ```
 
 Clear your cache via the Admin panel or through `bin/grav cache` in your project terminal. Load your page to see your Canvas site come to life.
@@ -42,19 +43,17 @@ However, editing the theme settings via the Grav Admin panel is recommended to u
 
 The following features are planned before the release of Version 1.0:
 
-- support for `modular` and `form` templates
+- support for `form` templates
 - support for the following official Grav plugins
-	+ Form (`form`)
-	+ Related Pages (`relatedpages`)
-	+ Feed (`feed`)
-	+ Pagination (`pagination`)
-	+ Breadcrumb (`breadcrumb`)
-	+ Simplesearch (`simplesearch`)
-	+ Sitemap (`sitemap`)
-	+ TaxonomyList (`taxonomylist`)
-	+ MarkdownNotices (`markdownnotices`)
+    * Form (`form`)
+    * Feed (`feed`)
+    * Pagination (`pagination`)
+    * Breadcrumb (`breadcrumb`)
+    * Simplesearch (`simplesearch`)
+    * Sitemap (`sitemap`)
+    * TaxonomyList (`taxonomylist`)
+    * Related Pages (`relatedpages`) 
 - incorporate useful `hypertext` theme settings
 - demo and testing content
-- Google Font customization
 - Support Grav's asset manager in handling js and css resources.
 - accessibility improvements.
