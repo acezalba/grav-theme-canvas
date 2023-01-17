@@ -50,17 +50,12 @@ However, editing the theme settings via the Grav Admin panel is recommended to u
 
 The following features are planned before the release of Version 1.0:
 
-- support for `form` templates
-- support for the following official Grav plugins
-    * Form (`form`)
-    * Feed (`feed`)
-    * Pagination (`pagination`)
+- support for `form` templates and form plugin
+* Pagination (`pagination`)
     * Breadcrumb (`breadcrumb`)
     * Simplesearch (`simplesearch`)
-    * Sitemap (`sitemap`)
     * TaxonomyList (`taxonomylist`)
     * Related Pages (`relatedpages`) 
 - incorporate useful `hypertext` theme settings
 - demo and testing content
-- Support Grav's asset manager in handling js and css resources.
 - accessibility improvements.
