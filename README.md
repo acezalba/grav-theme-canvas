@@ -8,14 +8,13 @@ A starter theme for Grav CMS. Designed for small, text-heavy personal sites and 
 
 - Support for the following templates:
 	+ `default`
-		* aliases: `page.md`
+		* aliases: `page`
 	+ `error`
 	+ `blog` - creates a list of its child pages
-		* aliases: `folder.md`, `archive.md`
+		* aliases: `folder`, `archive`, `index`
 	+ `item` - intended as a child page of `blog` directories.
-		* aliases: `post.md`, `article.md`
+		* aliases: `post`, `article`
 - Supports `category` and `tag` modules for `item` templates.
-- Handles
 - SEO-Friendly
 	+ natively supports and generates basic OpenGraph, Twitter Card, and Schema.org metadata for your content
 	+ allows you to customize your preview image for social sharing on a site and page level.
@@ -23,6 +22,14 @@ A starter theme for Grav CMS. Designed for small, text-heavy personal sites and 
 - Color customization
 - Favicon customization
 - Switch navigation between the header and footer.
+
+## Plugin Requirements
+
+- Grav >= 1.7
+- Sitemap
+- Feed
+
+Note: Support for `feed` is still basic and will be improved in the future. `blog` templates must explicitly define `content.item` attributes in their frontmatter for the feed to show. See [feed plugin repo](https://github.com/getgrav/grav-plugin-feed) for more details.
 
 ## Installation
 
@@ -43,17 +50,12 @@ However, editing the theme settings via the Grav Admin panel is recommended to u
 
 The following features are planned before the release of Version 1.0:
 
-- support for `form` templates
-- support for the following official Grav plugins
-    * Form (`form`)
-    * Feed (`feed`)
-    * Pagination (`pagination`)
+- support for `form` templates and form plugin
+* Pagination (`pagination`)
     * Breadcrumb (`breadcrumb`)
     * Simplesearch (`simplesearch`)
-    * Sitemap (`sitemap`)
     * TaxonomyList (`taxonomylist`)
     * Related Pages (`relatedpages`) 
 - incorporate useful `hypertext` theme settings
 - demo and testing content
-- Support Grav's asset manager in handling js and css resources.
 - accessibility improvements.

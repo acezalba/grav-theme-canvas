@@ -1,6 +1,6 @@
 {# CONTENT: Handles content generation logic #}
 
-{% if (page.template() == 'modular') or 
+{% if (page.template() in modular_alias ) or 
       (page.header.content.items == '@self.modular') %}
 {# Modular Compatibility layer: Dump modules as page.content #}
     {% for module in page.collection() %}
@@ -13,7 +13,7 @@ Dump a list of pages if page has page.content definition
   {% include 'partials/loop.html.twig' %}
 {% elseif (page.header.summary.enabled or page.header.summary.enabled is null) and 
       (enable_subtitle is null or enable_subtitle) and
-      (page.template() != 'item') and (not page.home())%}
+      (page.template() not in item_alias ) and (not page.home())%}
 {# Handle proper content slicing
 of summary and body text #}
   {% set content = page.content|slice(page.summary|length) %}

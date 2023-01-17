@@ -1,3 +1,12 @@
+# v0.6.0
+## 01/17/2023
+
+1. [](#new)
+	* Added basic support for `feed` and `sitemap` and declared as requirements/dependencies for the theme.
+2. [](#improved)
+	* Used asset manager for handling of theme css.
+	* Added template alias arrays in the theme to improve template-based theme logic
+
 # v0.5.0
 ## 01/17/2023
 
@@ -57,7 +66,3 @@
 	* Built the theme.
 	* Added support for `default`, `error`, `blog` and `item` templates.
 	* Added theme and page configurations.
-
-
-
-	

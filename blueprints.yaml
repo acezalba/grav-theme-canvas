@@ -3,7 +3,7 @@
 name: Canvas
 slug: canvas
 type: theme
-version: 0.2.1
+version: 0.6.0
 description: Experimental theme to learn Grav logic and set best beginner practices
 icon: star
 author:
@@ -15,6 +15,8 @@ bugs: https://www.acezalba.com
 license: MIT
 dependencies:
   - { name: grav, version: '>=1.7' }
+  - { name: sitemap }
+  - { name: feed }
 
 # THEME_SPECIFIC SETTINGS
 

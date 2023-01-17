@@ -2,7 +2,7 @@
   {% if page.home() %}
     <h1><a href="{{ home_url }}">{{ site.title }}</a></h1>
     <p>{{ meta_description }}</p>
-  {% elseif page.template() == 'item' and item_attr_placement == 'header' %}
+  {% elseif page.template() in item_alias and item_attr_placement == 'header' %}
     <h1><a href="{{ base_url }}">{{ page.title }}</a></h1> 
     {% include 'partials/item-attributes.html.twig' %}
   {% else %}
