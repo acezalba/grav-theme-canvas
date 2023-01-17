@@ -1,3 +1,9 @@
+# v0.7.2
+## 01/17/2023
+
+1. [](#bugfix)
+	* Fixed url and description metadata bugs
+
 # v0.7.1
 ## 01/17/2023
 
