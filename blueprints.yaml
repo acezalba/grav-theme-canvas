@@ -3,15 +3,15 @@
 name: Canvas
 slug: canvas
 type: theme
-version: 0.6.0
+version: 0.7.0
 description: Experimental theme to learn Grav logic and set best beginner practices
 icon: star
 author:
     name: Ace Z. Alba
     url: https://www.acezalba.com
-homepage: https://www.acezalba.com
+homepage: https://github.com/acezalba/canvas
 keywords: skeleton, beginner, tutorial
-bugs: https://www.acezalba.com
+bugs: https://github.com/acezalba/canvas/issues
 license: MIT
 dependencies:
   - { name: grav, version: '>=1.7' }
