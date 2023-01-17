@@ -8,10 +8,10 @@ A starter theme for Grav CMS. Designed for small, text-heavy personal sites and 
 
 - Support for the following templates:
 	+ `default`
-		* aliases: `page.md`
+		* aliases: `page`
 	+ `error`
 	+ `blog` - creates a list of its child pages
-		* aliases: `folder.md`, `archive.md`
+		* aliases: `folder`, `archive`, `index`
 	+ `item` - intended as a child page of `blog` directories.
 		* aliases: `post.md`, `article.md`
 - Supports `category` and `tag` modules for `item` templates.

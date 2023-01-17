@@ -1,6 +1,12 @@
 {# ----- THEME VARIABLES ----- #}
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
+{# Template aliases #}
+{% set default_alias = ['default','page'] %}
+{% set blog_alias = ['blog','folder','archive','index'] %}
+{% set item_alias = ['item','post','article'] %}
+{% set modular_alias = ['modular'] %}
+
 {# Author #}
 {% if page.author.name %}
   {% set author_name = page.author.name %}
