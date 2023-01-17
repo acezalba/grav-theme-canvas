@@ -1,3 +1,14 @@
+# v0.5.0
+## 01/17/2023
+
+1. [](#new)
+	* Added compatibility support for `modular` themes. Errors for when modular template is not present is currently unsuppressed. Solution pending.
+	* Added module `section` as a compatibility layer. Dumps module content.
+2. [](#bugfix)
+	* Fixed inline theme rendering
+3. [](#improved)
+	* Added more default values for theme
+
 # v0.4.1
 ## 01/11/2023
 
