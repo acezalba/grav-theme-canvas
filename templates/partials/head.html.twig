@@ -72,6 +72,18 @@
 }
 </script>
 
+{# PLUGIN - Feed #}
+{# Note: The plugin requires that there should be an
+explicit definition of content.items in the template
+for the feed to work, else it will just render the page #}
+{% if config.plugins["feed"].enabled and
+ page.template() == 'blog' and 
+ page.header.content.items %}
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} feed" href="{{ canonical_url }}.atom" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} feed" href="{{ canonical_url }}.rss" />
+  <link rel="alternate" type="application/json" title="{{ site.title }} feed" href="{{ canonical_url }}.json" />
+{% endif %}
+
 {# Asset Files #}
 
 {% block stylesheets %}
