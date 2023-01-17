@@ -1,4 +1,12 @@
-# v0.4.0
+# v0.6.0
+## 01/17/2023
+
+1. [](#new)
+	* Added basic support for `feed` and `sitemap` and declared as requirements/dependencies for the theme.
+2. [](#improved)
+	* Used asset manager for handling of theme css.
+
+# v0.5.0
 ## 01/17/2023
 
 1. [](#new)
@@ -8,6 +16,18 @@
 	* Fixed inline theme rendering
 3. [](#improved)
 	* Added more default values for theme
+
+# v0.4.1
+## 01/11/2023
+
+1. [](#bugfix)
+	* Fixed assets not loading caused by url mapping
+
+# v0.4.0
+## 01/07/2023
+
+1. [](#bugfix)
+	* Fixed preview image bug caused by variable misspelling
 
 # v0.3.0
 ## 01/06/2023
@@ -45,7 +65,3 @@
 	* Built the theme.
 	* Added support for `default`, `error`, `blog` and `item` templates.
 	* Added theme and page configurations.
-
-
-
-	
