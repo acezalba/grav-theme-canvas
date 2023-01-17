@@ -83,18 +83,15 @@
 {% block custom_css %}
 <style>
   {% if theme_config.color.theme.behavior == 'light' %}
-      {% include 'partials/custom-lighttheme.html.twig' %}
+      {% include 'partials/theme-light.html.twig' %}
   {% endif %}
 
   {% if theme_config.color.theme.behavior == 'dark' %}
-      {% include 'partials/custom-darktheme.html.twig' %}
+      {% include 'partials/theme-dark.html.twig' %}
   {% endif %}
 
   {% if theme_config.color.theme.behavior == 'theme_default' %}
-      {% include 'partials/custom-lighttheme.html.twig' %}
-      @media (prefers-color-scheme: dark) {
-        {% include 'partials/custom-darktheme.html.twig' %}
-      }
+      {% include 'partials/theme-default.html.twig' %}
   {% endif %}
 </style>
 {% endblock custom_css %}
