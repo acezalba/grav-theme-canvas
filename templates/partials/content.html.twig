@@ -1,12 +1,6 @@
 {# CONTENT: Handles content generation logic #}
 
-{% if (page.template() in modular_alias ) or 
-      (page.header.content.items == '@self.modular') %}
-{# Modular Compatibility layer: Dump modules as page.content #}
-    {% for module in page.collection() %}
-      {% include 'modular/section.html.twig' %}
-    {% endfor %}
-{% elseif page.header.content.items %}
+{% if page.header.content.items %}
 {# Collection Compatibility Layer
 Dump a list of pages if page has page.content definition
 #}
