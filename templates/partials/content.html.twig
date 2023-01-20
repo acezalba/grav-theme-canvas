@@ -1,9 +1,17 @@
-{# CONTENT: Handles content generation logic #}
+{# CONTENT: Handles fallback content generation logic. #}
 
-{% if page.header.content.items %}
+{% if page.template() not in modular_alias and
+page.header.content.items == '@self.modular' %}
+    {% for module in page.collection() %}
+        {% include 'modular/default.html.twig' %}    
+    {% endfor %} 
+{% elseif page.template() not in blog_alias and
+  page.header.content.items %}
 {# Collection Compatibility Layer
 Dump a list of pages if page has page.content definition
 #}
+  {% set content = page.content|slice(page.summary|length) %}
+  {{ content|raw }}
   {% include 'partials/loop.html.twig' %}
 {% elseif (page.header.summary.enabled or page.header.summary.enabled is null) and 
       (enable_subtitle is null or enable_subtitle) and
