@@ -14,8 +14,7 @@ Dump a list of pages if page has page.content definition
   {{ content|raw }}
   {% include 'partials/loop.html.twig' %}
 {% elseif (page.header.summary.enabled or page.header.summary.enabled is null) and 
-      (enable_subtitle is null or enable_subtitle) and
-      (page.template() not in item_alias ) and (not page.home())%}
+      (enable_subtitle is null or enable_subtitle) and (not page.home())%}
 {# Handle proper content slicing
 of summary and body text #}
   {% set content = page.content|slice(page.summary|length) %}
