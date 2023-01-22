@@ -60,13 +60,20 @@ form:
                     0: Off
                   validate:
                     type: bool
-            template_specific_section:
+            item_settings_section:
               type: section
               title: Template Settings
               underline: true
               fields:
-                template_specific_description:
+                item_settings_description:
                   type: display
                   label: Description
                   markdown: true
-                  content: Any template-specific settings will be listed below.
+                  content: Settings applicable to item, post, and article templates go here.
+                header.place_attributes:
+                  type: radio
+                  label: Move page attributes to:
+                  options:
+                    header: Header
+                    content_footer: Footer
+                  default: header
