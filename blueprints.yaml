@@ -17,6 +17,7 @@ dependencies:
   - { name: grav, version: '>=1.7' }
   - { name: sitemap }
   - { name: feed }
+  - { name: form }
 
 # THEME_SPECIFIC SETTINGS
 

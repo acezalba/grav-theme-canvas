@@ -163,6 +163,14 @@ form label + *:not(label,br) {
     margin-bottom: 1.2rem;
 }
 
+form input, select {
+    width: 100%;
+}
+
+form div {
+    margin-bottom: 1rem;
+}
+
 hr {
     height: 2rem;
     background: none;
