@@ -1,0 +1,10 @@
+{# Modular #}
+
+{% embed 'partials/base.html.twig' %}
+{% block content %}
+    {% for module in page.collection() %}
+        {% include 'modular/default.html.twig' %}    
+    {% endfor %} 
+{% endblock content %}
+{% endembed %}
+

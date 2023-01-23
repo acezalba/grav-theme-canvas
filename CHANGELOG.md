@@ -1,3 +1,14 @@
+# v0.8.0
+## 01/17/2023
+
+1. [](#new)
+	* Added basic support for the `form` plugin
+2. [](#bugfix)
+	* Fixed `item` template behavior
+	* Migrated `item` blueprints to `default` for aliased templates.
+3. [](#improved)
+	* Improved handling of `modular` pages.
+
 # v0.7.2
 ## 01/17/2023
 

@@ -1,19 +1,20 @@
-{# CONTENT: Handles content generation logic #}
+{# CONTENT: Handles fallback content generation logic. #}
 
-{% if (page.template() in modular_alias ) or 
-      (page.header.content.items == '@self.modular') %}
-{# Modular Compatibility layer: Dump modules as page.content #}
+{% if page.template() not in modular_alias and
+page.header.content.items == '@self.modular' %}
     {% for module in page.collection() %}
-      {% include 'modular/section.html.twig' %}
-    {% endfor %}
-{% elseif page.header.content.items %}
+        {% include 'modular/default.html.twig' %}    
+    {% endfor %} 
+{% elseif page.template() not in blog_alias and
+  page.header.content.items %}
 {# Collection Compatibility Layer
 Dump a list of pages if page has page.content definition
 #}
+  {% set content = page.content|slice(page.summary|length) %}
+  {{ content|raw }}
   {% include 'partials/loop.html.twig' %}
 {% elseif (page.header.summary.enabled or page.header.summary.enabled is null) and 
-      (enable_subtitle is null or enable_subtitle) and
-      (page.template() not in item_alias ) and (not page.home())%}
+      (enable_subtitle is null or enable_subtitle) and (not page.home())%}
 {# Handle proper content slicing
 of summary and body text #}
   {% set content = page.content|slice(page.summary|length) %}
