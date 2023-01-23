@@ -14,7 +14,8 @@ A starter theme for Grav CMS. Designed for small, text-heavy personal sites and 
 		* aliases: `folder`, `archive`, `index`
 	+ `item` - intended as a child page of `blog` directories.
 		* aliases: `post`, `article`
-- Supports `category` and `tag` modules for `item` templates.
+	+ `form`
+- Supports `category` and `tag` taxonomies for `item` templates.
 - SEO-Friendly
 	+ natively supports and generates basic OpenGraph, Twitter Card, and Schema.org metadata for your content
 	+ allows you to customize your preview image for social sharing on a site and page level.
@@ -28,8 +29,10 @@ A starter theme for Grav CMS. Designed for small, text-heavy personal sites and 
 - Grav >= 1.7
 - Sitemap
 - Feed
+- Form
+- Admin
 
-Note: Support for `feed` is still basic and will be improved in the future. `blog` templates must explicitly define `content.item` attributes in their frontmatter for the feed to show. See [feed plugin repo](https://github.com/getgrav/grav-plugin-feed) for more details.
+Note: Support for `feed` and `form` is still basic and will be improved in the future. `blog` templates must explicitly define `content.item` attributes in their frontmatter for the feed to show. See [feed plugin repo](https://github.com/getgrav/grav-plugin-feed) for more details.
 
 ## Installation
 
@@ -50,10 +53,9 @@ However, editing the theme settings via the Grav Admin panel is recommended to u
 
 The following features are planned before the release of Version 1.0:
 
-- support for `form` templates and form plugin
-* Pagination (`pagination`)
+- support for the following plugins
+	- Pagination (`pagination`)
     * Breadcrumb (`breadcrumb`)
-    * Simplesearch (`simplesearch`)
     * TaxonomyList (`taxonomylist`)
     * Related Pages (`relatedpages`) 
 - incorporate useful `hypertext` theme settings
