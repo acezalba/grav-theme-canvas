@@ -217,6 +217,27 @@ hr {
     border-bottom: 1px solid var(--accent-bg);
 }
 
+.pageflip {
+    border: unset;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    padding: unset;
+}
+
+.pageflip a {
+    font-size: 0.9rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-decoration: none;
+}
+
+.pageflip a:hover {
+    text-decoration: underline;
+}
+
 /* CSS Override - Grav Breadcrumbs plugin */
 
 #breadcrumbs {
@@ -238,9 +259,9 @@ hr {
 }
 
 #breadcrumbs a>span{
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #breadcrumbs a>span:hover {
-    text-decoration: none;
+    text-decoration: underline;
 }

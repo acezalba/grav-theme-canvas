@@ -38,7 +38,9 @@ Note: Support for `feed` and `form` is still basic and will be improved in the f
 
 ## Installation
 
-The current iteration of Canvas can only be installed via cloning the repository to your `user/themes`. Activate it by editing or adding the following line in your `user/config/system.yaml`.
+The recommended way to install Canvas is via cloning the [repository](https://github.com/acezalba/canvas.git) or downloading and extracting the latest [zip file](https://github.com/acezalba/canvas/archive/refs/heads/main.zip) to your `user/themes` directory. Canvas also has [releases](https://github.com/acezalba/canvas/releases) for future integration into Grav Package Manager.
+
+Activate it by editing or adding the following line in your `user/config/system.yaml`.
 
 ```yaml
 pages:
@@ -50,3 +52,15 @@ Clear your cache via the Admin panel or through `bin/grav cache` in your project
 Copy the default `canvas.yaml` bundled with the theme to your `user/config/themes` to start customizing the colors of your site using hex codes.
 
 However, editing the theme settings via the Grav Admin panel is recommended to use features not included in the default theme config file, such as favicon and preview image customization.
+
+## Future updates
+
+Future updates would include the following:
+
+- additional `modular` components
+- support for some `hypertext` settings
+- support for `relatedpages` and `taxonomylist`
+- improved support for `feed` and `form`
+- code improvements, bugfixes, and other relevant features.
+
+Feel free to report bugs and suggest features in the issue tracker.

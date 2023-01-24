@@ -1,0 +1,9 @@
+<section class="pageflip">
+    {% if not page.isLast %}
+        <div><span>&laquo;</span><a href="{{ page.prevSibling.url }}">{{ page.prevSibling.title }}</a></div>
+    {% endif %}
+
+    {% if not page.isFirst %}
+        <div><a href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }}</a><span>&raquo;</span></div>
+    {% endif %}
+</section>
