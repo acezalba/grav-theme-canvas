@@ -7,7 +7,7 @@
 {% embed 'partials/base.html.twig' %}
 
 {% block content %}
-<article>
+
 {% include 'partials/content.html.twig' %}
 {% if item_attr_placement == 'content_footer' %}
   <div class="content-footer">
@@ -15,7 +15,7 @@
   </div>
 
 {% endif %}
-</article>
+
 {% endblock %}
 
 {% endembed %}

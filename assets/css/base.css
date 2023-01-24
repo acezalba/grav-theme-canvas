@@ -197,3 +197,22 @@ hr {
     text-decoration: none;
 }
 
+/* CSS Override - Grav Pagination Plugin */
+.pagination {
+    text-align: left;
+}
+
+.pagination li {
+    border: none;
+    border-bottom: 1px solid var(--accent);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.pagination li:hover {
+    border-bottom: 1px solid var(--accent-bg);
+}

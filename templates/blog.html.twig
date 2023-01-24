@@ -8,12 +8,11 @@
 
 {% block content %}
 
-<article>
   {% set content = page.content|slice(page.summary|length) %}
   {{ content|raw }}
   <br>
   {% include 'partials/loop.html.twig' %}
-</article>
+
 {% endblock %}
 
 {% endembed %}
