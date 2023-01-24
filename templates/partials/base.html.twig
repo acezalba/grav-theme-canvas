@@ -70,7 +70,7 @@
 
 {% if page.header.preview_image_enable and page_preview_image %}
   {# Load the custom page-level preview image #}
-  {% set preview_image_url = canonical_url ~ page_preview_image_file %}
+  {% set preview_image_url = canonical_url ~ '/' ~ page_preview_image_file %}
 {% elseif use_first_image and page.media.items %}
   {# use the first image of the page as the page preview #}
   {% set first_image = (page.media|first).filename %}

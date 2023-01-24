@@ -38,7 +38,9 @@ Note: Support for `feed` and `form` is still basic and will be improved in the f
 
 ## Installation
 
-The current iteration of Canvas can only be installed via cloning the repository to your `user/themes`. Activate it by editing or adding the following line in your `user/config/system.yaml`.
+The recommended way to install Canvas is via cloning the [repository](https://github.com/acezalba/canvas.git) or downloading and extracting the latest [zip file](https://github.com/acezalba/canvas/archive/refs/heads/main.zip) to your `user/themes` directory. Canvas also has [releases](https://github.com/acezalba/canvas/releases) for future integration into Grav Package Manager.
+
+Activate it by editing or adding the following line in your `user/config/system.yaml`.
 
 ```yaml
 pages:
