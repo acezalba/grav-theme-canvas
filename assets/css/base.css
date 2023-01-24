@@ -216,3 +216,31 @@ hr {
 .pagination li:hover {
     border-bottom: 1px solid var(--accent-bg);
 }
+
+/* CSS Override - Grav Breadcrumbs plugin */
+
+#breadcrumbs {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-inline-start: unset;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 0.9rem;
+}
+
+#breadcrumbs span{
+    margin: unset;
+    padding: unset;
+    padding-left: 0.5rem;
+}
+
+#breadcrumbs a>span{
+    text-decoration: underline;
+}
+
+#breadcrumbs a>span:hover {
+    text-decoration: none;
+}

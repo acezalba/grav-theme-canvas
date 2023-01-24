@@ -11,11 +11,16 @@
 {% include 'partials/content.html.twig' %}
 {% if item_attr_placement == 'content_footer' %}
   <div class="content-footer">
-    {% include 'partials/item-attributes.html.twig' %}
+  {% include 'partials/item-attributes.html.twig' %}
   </div>
-
 {% endif %}
 
-{% endblock %}
+{% endblock content %}
+
+{% block breadcrumbs %}
+  {% if config.plugins.breadcrumbs.enabled %}
+    {% include 'partials/breadcrumbs.html.twig' %}
+  {% endif %} 
+{% endblock breadcrumbs %}
 
 {% endembed %}
