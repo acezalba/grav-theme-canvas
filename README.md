@@ -52,3 +52,15 @@ Clear your cache via the Admin panel or through `bin/grav cache` in your project
 Copy the default `canvas.yaml` bundled with the theme to your `user/config/themes` to start customizing the colors of your site using hex codes.
 
 However, editing the theme settings via the Grav Admin panel is recommended to use features not included in the default theme config file, such as favicon and preview image customization.
+
+## Future updates
+
+Future updates would include the following:
+
+- additional `modular` components
+- support for some `hypertext` settings
+- support for `relatedpages` and `taxonomylist`
+- improved support for `feed` and `form`
+- code improvements, bugfixes, and other relevant features.
+
+Feel free to report bugs and suggest features in the issue tracker.

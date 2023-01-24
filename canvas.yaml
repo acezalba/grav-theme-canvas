@@ -24,6 +24,6 @@ color:
       preformatted: '#cccccc'
       disabled: '#111111'
 layout:
-  navigation: header
-  item_place_attributes: "header"
+  navigation: 'header'
+  item_place_attributes: 'header'
   disable_theme_attribution: false

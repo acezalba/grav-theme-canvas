@@ -1,5 +1,15 @@
+# v1.0.0
+## 01/24/2023
+
+1. [](#new)
+	* Added demo pages.
+2. [](#bugfix)
+	* Fixed url generation for per site custom preview page.
+3. [](#improved)
+	* Improved `default` and `item` with pageflip urls when they are children of page listings.
+
 # v0.9.0
-## 01/17/2023
+## 01/24/2023
 
 1. [](#new)
 	* Added support for `breadcrumbs` and `pagination` plugin
