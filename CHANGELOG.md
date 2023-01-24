@@ -1,3 +1,10 @@
+# v1.0.1
+## 01/24/2023
+
+1. [](#bugfix)
+	* Fixed missplaced demo pages.
+
+
 # v1.0.0
 ## 01/24/2023
 
