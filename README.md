@@ -31,6 +31,8 @@ A starter theme for Grav CMS. Designed for small, text-heavy personal sites and 
 - Feed
 - Form
 - Admin
+- Pagination
+- Breadcrumbs
 
 Note: Support for `feed` and `form` is still basic and will be improved in the future. `blog` templates must explicitly define `content.item` attributes in their frontmatter for the feed to show. See [feed plugin repo](https://github.com/getgrav/grav-plugin-feed) for more details.
 
@@ -48,16 +50,3 @@ Clear your cache via the Admin panel or through `bin/grav cache` in your project
 Copy the default `canvas.yaml` bundled with the theme to your `user/config/themes` to start customizing the colors of your site using hex codes.
 
 However, editing the theme settings via the Grav Admin panel is recommended to use features not included in the default theme config file, such as favicon and preview image customization.
-
-## Upcoming Features
-
-The following features are planned before the release of Version 1.0:
-
-- support for the following plugins
-	- Pagination (`pagination`)
-    * Breadcrumb (`breadcrumb`)
-    * TaxonomyList (`taxonomylist`)
-    * Related Pages (`relatedpages`) 
-- incorporate useful `hypertext` theme settings
-- demo and testing content
-- accessibility improvements.

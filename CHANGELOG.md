@@ -1,5 +1,11 @@
-# v0.8.0
+# v0.9.0
 ## 01/17/2023
+
+1. [](#new)
+	* Added support for `breadcrumbs` and `pagination` plugin
+
+# v0.8.0
+## 01/23/2023
 
 1. [](#new)
 	* Added basic support for the `form` plugin

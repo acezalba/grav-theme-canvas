@@ -197,3 +197,50 @@ hr {
     text-decoration: none;
 }
 
+/* CSS Override - Grav Pagination Plugin */
+.pagination {
+    text-align: left;
+}
+
+.pagination li {
+    border: none;
+    border-bottom: 1px solid var(--accent);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.pagination li:hover {
+    border-bottom: 1px solid var(--accent-bg);
+}
+
+/* CSS Override - Grav Breadcrumbs plugin */
+
+#breadcrumbs {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-inline-start: unset;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 0.9rem;
+}
+
+#breadcrumbs span{
+    margin: unset;
+    padding: unset;
+    padding-left: 0.5rem;
+}
+
+#breadcrumbs a>span{
+    text-decoration: underline;
+}
+
+#breadcrumbs a>span:hover {
+    text-decoration: none;
+}
