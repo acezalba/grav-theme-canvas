@@ -1,3 +1,9 @@
+# v1.0.2
+## 01/24/2023
+
+1. [](#bugfix)
+	* Fixed missing breadcrumb css overrides.
+
 # v1.0.1
 ## 01/24/2023
 

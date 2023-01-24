@@ -250,6 +250,8 @@ hr {
     padding: 1rem;
     margin: 1rem;
     font-size: 0.9rem;
+    line-height: unset;
+    height: unset;
 }
 
 #breadcrumbs span{
