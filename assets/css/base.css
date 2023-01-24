@@ -258,6 +258,8 @@ hr {
     margin: unset;
     padding: unset;
     padding-left: 0.5rem;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 #breadcrumbs a>span{
