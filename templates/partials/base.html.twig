@@ -23,7 +23,7 @@
 {% set favicon_file = (favicon|first).name %}
 {% if theme_config.media.favicon %} 
   {% set favicon_user_dir = url('user://images/') %}
-  {% set favicon_file_url =  home_url|trim('/', 'right') ~ favicon_user_dir ~ favicon_file %}
+  {% set favicon_file_url =  home_url|trim('/', 'right') ~ favicon_user_dir ~ '/' ~ favicon_file %}
 {% else %}
   {% set favicon_default_file = url('theme://assets/image/favicon.png') %}
   {% set favicon_file_url = home_url|trim('/', 'right') ~ favicon_default_file  %}
