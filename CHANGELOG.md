@@ -1,3 +1,9 @@
+# v1.0.4
+## 01/27/2023
+
+1. [](#bugfix)
+	* Bugfix for url of user-uploaded favicon.
+
 # v1.0.3
 ## 01/24/2023
 
