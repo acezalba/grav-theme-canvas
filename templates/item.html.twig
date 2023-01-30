@@ -4,6 +4,14 @@
    BLOG directories
 #}
 
+{# Template Toggles #}
+{# Item - Attributes Placement #}
+{% if page.header.place_attributes is null %}
+  {% set item_attr_placement = theme_config.layout.item_place_attributes %}
+{% else %}
+  {% set item_attr_placement = page.header.place_attributes %}
+{% endif %}
+
 {% embed 'partials/base.html.twig' %}
 
 {% block content %}

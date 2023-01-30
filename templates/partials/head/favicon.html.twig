@@ -1,0 +1,17 @@
+
+{# Favicon = favicon_file_url #}
+{% set favicon = theme_config.media.favicon %}
+{% set favicon_file = (favicon|first).name %}
+{% if theme_config.media.favicon %} 
+  {% set favicon_user_dir = url('user://images/') %}
+  {% set favicon_file_url =  home_url|trim('/', 'right') ~ favicon_user_dir ~ '/' ~ favicon_file %}
+{% else %}
+  {% set favicon_default_file = url('theme://assets/image/favicon.png') %}
+  {% set favicon_file_url = home_url|trim('/', 'right') ~ favicon_default_file  %}
+{% endif %}
+
+{% if favicon_file_url %}
+<link rel="icon" type="image/png" href="{{ favicon_file_url }}" >
+<link rel="apple-touch-icon" href="{{ favicon_file_url }}" >
+<link rel="mask-icon" href="{{ favicon_file_url }}">
+{% endif %}
