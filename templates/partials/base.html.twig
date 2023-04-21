@@ -1,15 +1,10 @@
 {# ----- THEME VARIABLES ----- #}
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
-{{ dump("page.prevSibling.title output:", page.prevSibling.title) }}
-{{ dump("page.nextSibling.title output:", page.nextSibling.title) }}
-
-    
-
 {# Template aliases #}
 {% set default_templates = ['default','page'] %}
-{% set item_templates = ['item','post','article','collection'] %}
-{% set blog_templates = ['blog','folder','archive','index'] %}
+{% set item_templates = ['item','post','article'] %}
+{% set blog_templates = ['blog','folder','archive','index','collection'] %}
 {% set modular_templates = ['modular'] %}
 
 {# Template assignment system #}
