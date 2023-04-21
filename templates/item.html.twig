@@ -18,10 +18,7 @@
 {% endblock content %}
 
 {% block pageflip %}
-  {% if page.parent.template() in blog_alias or
-  (page.parent.header.content.items and
-  page.parent.header.content.items != '@self.modular')
-  %}
+  {% if page_template == 'item' %}
     {% include 'partials/pageflip.html.twig' %}
   {% endif %}
 {% endblock pageflip %}

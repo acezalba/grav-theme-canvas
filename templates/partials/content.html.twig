@@ -1,12 +1,10 @@
 {# CONTENT: Handles fallback content generation logic. #}
 
-{% if page.template() not in modular_alias and
-page.header.content.items == '@self.modular' %}
+{% if page_template == 'modular' %}
     {% for module in page.collection() %}
         {% include 'modular/default.html.twig' %}    
     {% endfor %} 
-{% elseif page.template() not in blog_alias and
-  page.header.content.items %}
+{% elseif page_template == 'blog' %}
 {# Collection Compatibility Layer
 Dump a list of pages if page has page.content definition
 #}

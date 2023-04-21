@@ -1,5 +1,6 @@
 {# LOOP
-Generates a basic post loop/index #}
+Generates a basic post loop/index 
+Taken with modifications from Hypertext #}
 
 {% set page_collection = page.collection()|length > 0 ? page.collection() : page.children.visible('folder','asc') %}
 

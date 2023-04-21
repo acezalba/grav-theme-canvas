@@ -1,11 +1,40 @@
 {# ----- THEME VARIABLES ----- #}
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
+{{ dump("page.prevSibling.title output:", page.prevSibling.title) }}
+{{ dump("page.nextSibling.title output:", page.nextSibling.title) }}
+
+    
+
 {# Template aliases #}
-{% set default_alias = ['default','page'] %}
-{% set blog_alias = ['blog','folder','archive','index'] %}
-{% set item_alias = ['item','post','article'] %}
-{% set modular_alias = ['modular'] %}
+{% set default_templates = ['default','page'] %}
+{% set item_templates = ['item','post','article','collection'] %}
+{% set blog_templates = ['blog','folder','archive','index'] %}
+{% set modular_templates = ['modular'] %}
+
+{# Template assignment system #}
+{% if page.template() in default_templates %}
+  {% set page_template = 'default' %}
+{% endif %}
+
+{% if page.template() in item_templates %}
+  {% set page_template = 'item' %}
+{% endif %}
+
+{# Page collection fallback system #}
+{% if (page.template() in modular_templates) or
+(page.template() not in modular_templates and
+page.header.content.items == '@self.modular') %}
+
+  {% set page_template = 'modular' %}
+
+{% elseif (page.template() in blog_templates) or
+(page.template() not in blog_alias and
+  page.header.content.items) %}
+
+  {% set page_template = 'blog' %}
+
+{% endif %}
 
 {# Toggle for both metadata description and header #}
 {% if page.header.enable_subtitle is null %}
