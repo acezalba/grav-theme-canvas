@@ -4,22 +4,15 @@
    BLOG directories
 #}
 
-{# Template Toggles #}
-{# Item - Attributes Placement #}
-{% if page.header.place_attributes is null %}
-  {% set item_attr_placement = theme_config.layout.item_place_attributes %}
-{% else %}
-  {% set item_attr_placement = page.header.place_attributes %}
-{% endif %}
 
 {% embed 'partials/base.html.twig' %}
 
 {% block content %}
 
 {% include 'partials/content.html.twig' %}
-{% if item_attr_placement == 'content_footer' %}
+{% if metadata_location == 'content_footer' %}
   <div class="content-footer">
-  {% include 'partials/item-attributes.html.twig' %}
+  {% include 'partials/metadata.html.twig' %}
   </div>
 {% endif %}
 {% endblock content %}

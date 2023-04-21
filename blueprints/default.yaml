@@ -10,17 +10,17 @@ form:
           type: tab
           title: Customize page
           fields:
-            preview_image_section:
+            featured_image_section:
               type: section
-              title: Preview Image
+              title: Featured Image
               underline: true
               fields:
-                preview_image_directions:
+                featured_image_directions:
                   type: display
                   label: How this works
                   markdown: true
-                  content: You can add a custom Preview Image per page for sharing on social sites. If no custom image is uploaded, it will use the first image of the page. If the page has no photos, it will use the preview image defined in the theme settings. A `1200×630` image size is recommended.
-                header.preview_image_enable:
+                  content: You can add a custom Featured Image per page for sharing on social sites. If no custom image is uploaded, it will use the first image of the page. If the page has no photos, it will use the preview image defined in the theme settings. A `1200×630` image size is recommended.
+                header.media.featured_image.toggle:
                   type: toggle
                   label: Enable preview image
                   highlight: 1
@@ -30,7 +30,7 @@ form:
                     0: No
                   validate:
                     type: bool
-                header.page_preview_image:
+                header.media.featured_image.file:
                   type: file
                   label: Upload your custom preview image.
                   destination: 'self@'
@@ -50,7 +50,7 @@ form:
                   label: How this works
                   markdown: true
                   content: In pages that are not set to the home page, the header uses the page summary as a subtitle. Use the settings below to disable it.
-                header.enable_subtitle:
+                header.partials.header.subtitle.toggle:
                   type: toggle
                   label: Turn header subtitle on or off
                   highlight: 1
@@ -70,7 +70,7 @@ form:
                   label: Description
                   markdown: true
                   content: Settings applicable to item, post, and article templates go here.
-                header.place_attributes:
+                header.partials.metadata.where:
                   type: radio
                   label: Move page attributes to:
                   options:

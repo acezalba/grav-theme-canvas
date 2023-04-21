@@ -1,0 +1,16 @@
+{% style priority: 30 %}
+{% set custom = theme_config.style.colors.custom %}
+:root {
+    --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    --bg: {{ custom.light.bg }};
+    --accent-bg: {{ custom.light.accent_bg }};
+    --text: {{ custom.light.text }};
+    --text-light: {{ custom.light.text_light }};
+    --border: {{ custom.light.border }};
+    --accent: {{ custom.light.accent }};
+    --code: {{ custom.light.code }};
+    --preformatted: {{ custom.light.preformatted }};
+    --marked: {{ custom.light.marked }};
+    --disabled: {{ custom.light.disabled }};
+}
+{% endstyle %}

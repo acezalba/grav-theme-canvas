@@ -14,16 +14,18 @@
 
 {# Inline Theme Styling #}
 <style>
-  {% if theme_config.color.theme.behavior == 'light' %}
-    {% include 'partials/theme-light.html.twig' %}
+  {% set color_group = theme_config.style.colors.group %}
+  
+  {% if color_group == 'light' %}
+    {% include 'partials/theme/light.html.twig' %}
   {% endif %}
 
-  {% if theme_config.color.theme.behavior == 'dark' %}
-    {% include 'partials/theme-dark.html.twig' %}
+  {% if color_group == 'dark' %}
+    {% include 'partials/theme/dark.html.twig' %}
   {% endif %}
 
-  {% if theme_config.color.theme.behavior == 'theme_default' %}
-    {% include 'partials/theme-default.html.twig' %}
+  {% if color_group == 'theme_default' %}
+    {% include 'partials/theme/default.html.twig' %}
   {% endif %}
 </style>
 

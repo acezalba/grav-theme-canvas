@@ -1,9 +1,12 @@
 <section class="pageflip">
-    {% if not page.isLast %}
-        <div><span>&laquo;</span><a href="{{ page.prevSibling.url }}">{{ page.prevSibling.title }}</a></div>
-    {% endif %}
+    {% set has_siblings = page.parent.children.count() > 1 %}
+    {% if has_siblings %}
+        {% if not page.isLast %}
+            <div><a href="{{ page.prevSibling.url }}">&laquo;{{ page.prevSibling.title }} </a></div>
+        {% endif %}
 
-    {% if not page.isFirst %}
-        <div><a href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }}</a><span>&raquo;</span></div>
+        {% if not page.isFirst %}
+            <div><a href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }} &raquo;</a></div>
+        {% endif %}
     {% endif %}
 </section>

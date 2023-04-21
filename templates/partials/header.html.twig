@@ -7,7 +7,7 @@
     {% if enable_subtitle %}
       <p>{{ page.summary|raw }}</p>
     {% endif %}
-    {% include 'partials/item-attributes.html.twig' %}
+    {% include 'partials/metadata.html.twig' %}
   {% else %}
     <h1><a href="{{ base_url }}">{{ page.title }}</a></h1>
     {% if enable_subtitle %}
@@ -15,7 +15,7 @@
     {% endif %}
   {% endif %}
 
-  {% if theme_config.layout.navigation == 'header' %}
+  {% if theme_config.partials.navigation.where == 'header' %}
     {% block navigation %}
       {% include 'partials/navigation.html.twig' %}
     {% endblock navigation %}

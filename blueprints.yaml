@@ -31,16 +31,16 @@ form:
       type: tabs
       active: 0
       fields:
-        color: # color overrides
+        style: # style overrides
           type: tab
           title: Colors
           fields:
-            color.theme:
+            style.colors:
               type: section
               underline: true
               title: Theme behavior
               fields:
-                color.theme.behavior:
+                style.colors.group:
                   type: radio
                   label: Modify how the theme behaves
                   options:
@@ -48,7 +48,7 @@ form:
                     light: Use light theme only
                     dark: Use dark theme only
                   default: theme_default
-            color.custom:
+            style.color.custom:
               title: Customize theme colors
               type: section
               underline: true
@@ -63,39 +63,39 @@ form:
                           type: section
                           underline: true
                           title: Light theme
-                        color.custom.light.bg:
+                        style.color.custom.light.bg:
                           type: colorpicker
                           label: Background color
                           default: '#fffff'
-                        color.custom.light.accent_bg:
+                        style.color.custom.light.accent_bg:
                           type: colorpicker
                           label: Background accent
                           default: '#f5f7ff'
-                        color.custom.light.text:
+                        style.color.custom.light.text:
                           type: colorpicker
                           label: Text color
                           default: '#212121'
-                        color.custom.light.text_light:
+                        style.color.custom.light.text_light:
                           type: colorpicker
                           label: Light text
                           default: '#585858'
-                        color.custom.light.border:
+                        style.color.custom.light.border:
                           type: colorpicker
                           label: Borders
                           default: '#d8dae1'
-                        color.custom.light.accent:
+                        style.color.custom.light.accent:
                           type: colorpicker
                           label: Accent color
                           default: '#004d40'
-                        color.custom.light.code:
+                        style.color.custom.light.code:
                           type: colorpicker
                           label: Code snippets
                           default: '#795548'
-                        color.custom.light.preformatted:
+                        style.color.custom.light.preformatted:
                           type: colorpicker
                           label: Preformatted text
                           default: '#444444'
-                        color.custom.light.disabled:
+                        style.color.custom.light.disabled:
                           type: colorpicker
                           label: Disabled text
                           default: '#efefef'
@@ -107,39 +107,39 @@ form:
                           type: section
                           underline: true
                           title: Dark theme
-                        color.custom.dark.bg:
+                        style.color.custom.dark.bg:
                           type: colorpicker
                           label: Background color
                           default: '#212121'
-                        color.custom.dark.accent_bg:
+                        style.color.custom.dark.accent_bg:
                           type: colorpicker
                           label: Background accent
                           default: '#2b2b2b'
-                        color.custom.dark.text:
+                        style.color.custom.dark.text:
                           type: colorpicker
                           label: Text color
                           default: '#dcdcdc'
-                        color.custom.dark.text_light:
+                        style.color.custom.dark.text_light:
                           type: colorpicker
                           label: Light text
                           default: '#ababab'
-                        color.custom.dark.border:
+                        style.color.custom.dark.border:
                           type: colorpicker
                           label: Borders
                           default: '#666'
-                        color.custom.dark.accent:
+                        style.color.custom.dark.accent:
                           type: colorpicker
                           label: Accent color
                           default: '#00bcd4'
-                        color.custom.dark.code:
+                        style.color.custom.dark.code:
                           type: colorpicker
                           label: Code snippets
                           default: '#ea80fc'
-                        color.custom.dark.preformatted:
+                        style.color.custom.dark.preformatted:
                           type: colorpicker
                           label: Preformatted text
                           default: '#cccccc'
-                        color.custom.dark.disabled:
+                        style.color.custom.dark.disabled:
                           type: colorpicker
                           label: Disabled text
                           default: '#111111'
@@ -152,7 +152,7 @@ form:
               title: Navigation Bar
               underline: true
               fields:
-                layout.navigation:
+                partials.navigation.where:
                   type: radio
                   label: Place the navbar where?
                   options:
@@ -164,18 +164,18 @@ form:
               title: Footer Text Options
               underline: true
               fields:
-                layout.custom_attribution:
+                partials.footer.attribution.content:
                     type: text
                     autofocus: true
                     label: Custom attribution
                     help: A one-liner section for copyright or similar.
                     markdown: true
-                layout.disable_theme_attribution:
+                partials.footer.theme_attribution.toggle:
                   type: toggle
-                  label: Disable theme attribution?
+                  label: Keep theme attribution?
                   help: Please keep it on.
                   highlight: 0
-                  default: 0
+                  default: 1
                   options:
                     1: Yes
                     0: No
@@ -190,7 +190,7 @@ form:
                   type: display
                   label: How it works
                   content: Some templates have layout settings. Change their settings below to define their defaults.
-                layout.item_place_attributes:
+                partials.metadata.where:
                   type: radio
                   label: Move page attributes in `item` templates to:
                   options:
@@ -206,7 +206,7 @@ form:
               title: Custom Favicon
               underline: true
               fields:
-                media.favicon:
+                media.favicon.file:
                   type: file
                   label: Upload your custom favicon
                   destination: 'user://images'
@@ -216,12 +216,12 @@ form:
                   filesize: 1
                   accept:
                     - image/*
-            custom_preview_image:
+            custom_featured_image:
               type: section
               title: Custom Preview Image
               underline: true
               fields:
-                media.site_preview_image:
+                media.featured_image.file:
                   type: file
                   label: Upload your custom preview image.
                   help: This is used as your site's preview image for Facebook (OpenGraph) and Twitter when you have no preview-image set per page. Defaults to a theme-based preview image if none uploaded.

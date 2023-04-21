@@ -1,0 +1,20 @@
+{% style priority: 30 %}
+{% set custom = theme_config.style.colors.custom %}
+:root {
+    color-scheme: dark;
+    --bg: {{ custom.dark.bg }};
+    --accent-bg: {{ custom.dark.accent_bg }};
+    --text: {{ custom.dark.text }};
+    --text-light: {{ custom.dark.text_light }};
+    --border: {{ custom.dark.border }};
+    --accent: {{ custom.dark.accent }};
+    --code: {{ custom.dark.code }};
+    --preformatted: {{ custom.dark.preformatted }};
+    --disabled: {{ custom.dark.disabled }};
+}
+img,
+video {
+    opacity: 0.8;
+    }
+}
+{% endstyle %}

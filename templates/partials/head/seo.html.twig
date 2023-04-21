@@ -1,13 +1,4 @@
 
-{# Title = meta_title #}
-{% set page_title = page.title|e %}
-{% set site_title = site.title|e %}
-{% if page_title %}
-  {% set meta_title = page_title ~ ' | ' ~ site_title %}
-{% else %}
-  {% set meta_title = site_title %}
-{% endif %}
-
 {% if meta_title %}
 <title>{{ meta_title }}</title>
 <meta itemprop="name" content="{{ meta_title }}">
@@ -16,81 +7,34 @@
 {% endif %}
 
 {# URLs #}
-{% set canonical_url = page.url(true, true) %}
 {% if canonical_url %}
 <link rel="canonical" href="{{ canonical_url }}">
 <meta property="og:url" content="{{ canonical_url }}">
 <meta property="twitter:url" content="{{ canonical_url }}">
 {% endif %}
 
-{# Author #}
-{% if page.author.name %}
-  {% set author_name = page.author.name %}
-{% else %}
-  {% set author_name = site.author.name %}
-{% endif %}
-
+{# Author Name #}
 {% if author_name %}
 <meta property="article:author" content="{{ author_name }}">
 {% endif %}
 
-{# Description #}
-{% if enable_subtitle and not page.home() %}
-  {% set meta_description = page.summary|trim|striptags|convert_encoding('UTF-8', 'HTML-ENTITIES') %}
-{% elseif site.metadata.description %}
-  {% set meta_description = site.metadata.description %}
-{% else %}
-  {% set meta_description = "Join me on my growth and journey" %}
-{% endif %}
-
+{# Site Description #}
 {% if meta_description %}
 <meta property="og:description" content="{{ meta_description }}">
 <meta property="twitter:description" content="{{ meta_description }}">
 <meta itemprop="description" content="{{ meta_description }}">
 {% endif %}
 
-{# Preview image #}
-{# Site-level custom preview image #}
-{% set site_preview_image = theme_config.media.site_preview_image %}
-{% set site_preview_image_file = (site_preview_image|first).name %}
-{# Page-level custom preview image #}
-{% set page_preview_image = page.header.page_preview_image %}
-{% set page_preview_image_file = (page_preview_image|first).name %}
-{# Trigger for first image as page preview image #}
-{% if page_preview_image %}
-  {% set use_first_image = false %}
-{% else %}
-  {% set use_first_image = true %}
+{% if featured_image_url %}
+<meta property="og:image" content="{{ featured_image_url }}">
+<meta property="twitter:image" content="{{ featured_image_url }}">
+<meta itemprop="image" content="{{ featured_image_url }}">
 {% endif %}
-
-{% if page.header.preview_image_enable and page_preview_image %}
-  {# Load the custom page-level preview image #}
-  {% set preview_image_url = canonical_url ~ '/' ~ page_preview_image_file %}
-{% elseif use_first_image and page.media.items %}
-  {# use the first image of the page as the page preview #}
-  {% set first_image = (page.media|first).filename %}
-  {% set preview_image_url = canonical_url ~ '/' ~ first_image %}
-{% elseif theme_config.media.site_preview_image %}
-  {# Load the custom site-level preview image defined in the theme settings #}
-  {% set theme_user_dir =  url('user://images/') %}
-  {% set preview_image_url = base_url_absolute|trim('/', 'right') ~ theme_user_dir ~ '/' ~ site_preview_image_file %}
-{% else %}
-  {# Load the default preview image bundled with the theme #}
-  {% set default_preview_image_url =  url('theme://assets/image/preview-image.png') %}
-  {% set preview_image_url = base_url_absolute|trim('/', 'right') ~ default_preview_image_url %} 
-{% endif %}
-
-{% if preview_image_url %}
-<meta property="og:image" content="{{ preview_image_url }}">
-<meta property="twitter:image" content="{{ preview_image_url }}">
-<meta itemprop="image" content="{{ preview_image_url }}">
-{% endif %}
-
 
 {# Date Published #}
 {% set date_published = page.date|date("F j, Y") %}
       
-{# Social Media Metadata #}
+{# Social Media Type #}
 <meta property="og:type" content="website">
 <meta property="twitter:card" content="summary_large_image">
 
@@ -104,7 +48,7 @@
   "url": "{{ canonical_url }}",
   "image": {
     "@type": "ImageObject",
-    "url": "{{ preview_image_url }}",
+    "url": "{{ featured_image_url }}",
   },
   "author": {
     "@type": "Person",
