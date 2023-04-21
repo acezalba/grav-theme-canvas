@@ -1,3 +1,9 @@
+# v2.0.0
+## 04/21/2023
+
+1. [](#bugfix)
+	* Breaking release - restructured blueprint system to improve settings portability. Old settings from v1 are no longer supported due to renamed blueprint variables. See `blueprints.yaml` and `canvas.yaml` for the new variables.
+
 # v1.0.4
 ## 01/27/2023
 
