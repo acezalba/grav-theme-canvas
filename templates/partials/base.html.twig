@@ -47,6 +47,17 @@ page.header.content.items == '@self.modular') %}
 
 {# SEO #}
 
+{# Favicon = favicon_file_url #}
+{% set favicon = theme_config.media.favicon %}
+{% set favicon_file = (favicon|first).name %}
+{% if theme_config.media.favicon %} 
+  {% set favicon_user_dir = url('user://images/') %}
+  {% set favicon_file_url =  home_url|trim('/', 'right') ~ favicon_user_dir ~ '/' ~ favicon_file %}
+{% else %}
+  {% set favicon_default_file = url('theme://assets/image/favicon.png') %}
+  {% set favicon_file_url = home_url|trim('/', 'right') ~ favicon_default_file  %}
+{% endif %}
+
 {# Title = meta_title #}
 {% set page_title = page.title|e %}
 {% set site_title = site.title|e %}
