@@ -4,7 +4,10 @@
 1. [](#new)
 	* BREAKING - restructured blueprint system to improve settings portability. Old settings from v1 are no longer supported due to renamed blueprint variables. See `blueprints.yaml` and `canvas.yaml` for the new variable system. All themes that use `canvas` as a starter are recommended  to place all page-level blueprint schemas in `default.yaml` and let the partials and theme templates handle if they must access the values in `default.yaml` This unless you really need to lock a set of settings to a specific template.
 	* Depreciated template alias files and transferred alias handling to theme logic. This is to declutter the template list in the admin page settings. See `partials/base.html.twig` for the alias lists. If you explicitly want a template alias to appear in the page settings, you must create a new template file that embeds the official template it stands for and register it in the alias lists in `partials/base.html.twig`.
-	* Fixed pageflip to only appear if the parent page has a `content.items` explicitly defined.
+2. [](#bugfix)
+	* Fixed pageflip to only appear if the parent page has a `content.items` defined.
+	* Fixed missing description value.
+	* Fixed breadcrumbs to only appear in  `item`-like pages.
 
 # v1.0.4
 ## 01/27/2023

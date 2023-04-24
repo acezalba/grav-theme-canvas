@@ -5,14 +5,20 @@
 
 {% embed 'partials/base.html.twig' %}
 
+
+{# Compatibility layer for features in
+item-type pages. #}
+
 {% block pageflip %}
-  {% if page.parent.template() in blog_alias or
-  (page.parent.header.content.items and
-  page.parent.header.content.items != '@self.modular')
-  %}
+  {% if page_template == 'item' %}
     {% include 'partials/pageflip.html.twig' %}
   {% endif %}
 {% endblock pageflip %}
 
+{% block breadcrumbs %}
+  {% if config.plugins.breadcrumbs.enabled and page_template == 'item' %}
+    {% include 'partials/breadcrumbs.html.twig' %}
+  {% endif %} 
+{% endblock breadcrumbs %}
 
 {% endembed %}

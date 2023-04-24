@@ -24,7 +24,7 @@ page.header.content.items == '@self.modular') %}
   {% set page_template = 'modular' %}
 
 {% elseif (page.template() in blog_templates) or
-(page.template() not in blog_alias and
+(page.template() not in blog_templates and
   page.header.content.items) %}
 
   {% set page_template = 'blog' %}

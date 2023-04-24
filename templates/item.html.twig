@@ -17,16 +17,5 @@
 {% endif %}
 {% endblock content %}
 
-{% block pageflip %}
-  {% if page_template == 'item' %}
-    {% include 'partials/pageflip.html.twig' %}
-  {% endif %}
-{% endblock pageflip %}
-
-{% block breadcrumbs %}
-  {% if config.plugins.breadcrumbs.enabled %}
-    {% include 'partials/breadcrumbs.html.twig' %}
-  {% endif %} 
-{% endblock breadcrumbs %}
-
 {% endembed %}
+
