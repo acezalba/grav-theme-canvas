@@ -78,9 +78,12 @@ form:
                     content_footer: Footer
                   default: header
                 header.partials.breadcrumbs.toggle:
-                  type: radio
+                  type: toggle
                   label: Force visibility of breadcrumbs on a specific on any page. Visible by default of `item` pages, hidden on the rest.
+                  highlight: 1
+                  default: 0
                   options:
-                    visible: Visible
-                    hidden: Hidden
-                  default: hidden
+                    1: Visible
+                    0: Hidden
+                  validate:
+                    type: bool
