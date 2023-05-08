@@ -1,3 +1,9 @@
+# v2.1.0
+## 05/08/2023
+
+1. [](#bugfix)
+	* Fixed typo in favicon url in `partials/base`.
+
 # v2.0.0
 ## 05/08/2023
 
