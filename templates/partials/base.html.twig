@@ -39,10 +39,19 @@ page.header.content.items == '@self.modular') %}
 {% endif %}
 
 {# Placement for metadata attributes in item templates #}
-{% if page.header.where is null %}
+{% if page.header.metadata.where is null %}
   {% set metadata_location = theme_config.partials.metadata.where %}
 {% else %}
   {% set metadata_location = page.header.partials.metadata.where %}
+{% endif %}
+
+{# Logic for breadcrumbs visibility and overriding #}
+{# Breadcrumbs is exclusive to item templates, but can be overriden #}
+
+{% if page.header.breadcrumbs.toggle is null and page_template == 'item' %}
+  {% set breadcrumbs_visible = true %}
+{% else %}
+    {% set breadcrumbs_visible = page.header.partials.breadcrumbs.toggle %}
 {% endif %}
 
 {# SEO #}

@@ -72,8 +72,15 @@ form:
                   content: Settings applicable to item, post, and article templates go here.
                 header.partials.metadata.where:
                   type: radio
-                  label: Move page attributes to:
+                  label: Move page attributes to
                   options:
                     header: Header
                     content_footer: Footer
                   default: header
+                header.partials.breadcrumbs.toggle:
+                  type: radio
+                  label: Force visibility of breadcrumbs on a specific on any page. Visible by default of `item` pages, hidden on the rest.
+                  options:
+                    visible: Visible
+                    hidden: Hidden
+                  default: hidden

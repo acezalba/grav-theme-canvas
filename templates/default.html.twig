@@ -15,10 +15,4 @@ item-type pages. #}
   {% endif %}
 {% endblock pageflip %}
 
-{% block breadcrumbs %}
-  {% if config.plugins.breadcrumbs.enabled and page_template == 'item' %}
-    {% include 'partials/breadcrumbs.html.twig' %}
-  {% endif %} 
-{% endblock breadcrumbs %}
-
 {% endembed %}

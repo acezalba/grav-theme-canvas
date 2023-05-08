@@ -192,7 +192,7 @@ form:
                   content: Some templates have layout settings. Change their settings below to define their defaults.
                 partials.metadata.where:
                   type: radio
-                  label: Move page attributes in `item` templates to:
+                  label: Move page attributes in `item` templates to
                   options:
                     header: Header
                     content_footer: Footer
