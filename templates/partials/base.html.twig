@@ -48,7 +48,7 @@ page.header.content.items == '@self.modular') %}
 {# Logic for breadcrumbs visibility and overriding #}
 {# Breadcrumbs is exclusive to item templates, but can be overriden #}
 
-{% if page.header.breadcrumbs.toggle is null and page_template == 'item' %}
+{% if page.header.partials.breadcrumbs.toggle is null and page_template == 'item' %}
   {% set breadcrumbs_visible = true %}
 {% else %}
     {% set breadcrumbs_visible = page.header.partials.breadcrumbs.toggle %}
