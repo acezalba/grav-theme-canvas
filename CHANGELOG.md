@@ -1,3 +1,9 @@
+# v2.2.0
+## 05/08/2023
+
+1. [](#bugfix)
+	* Replaced bug-causing old logic in `partials/header.html.twig` and `partials/base.html.twig`.
+
 # v2.1.0
 ## 05/08/2023
 
