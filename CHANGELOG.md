@@ -1,5 +1,5 @@
 # v2.0.0
-## 04/21/2023
+## 05/08/2023
 
 1. [](#new)
 	* BREAKING - restructured blueprint system to improve settings portability. Old settings from v1 are no longer supported due to renamed blueprint variables. See `blueprints.yaml` and `canvas.yaml` for the new variable system. All themes that use `canvas` as a starter are recommended  to place all page-level blueprint schemas in `default.yaml` and let the partials and theme templates handle if they must access the values in `default.yaml` This unless you really need to lock a set of settings to a specific template.
@@ -8,6 +8,8 @@
 	* Fixed pageflip to only appear if the parent page has a `content.items` defined.
 	* Fixed missing description value.
 	* Fixed breadcrumbs to only appear in  `item`-like pages.
+3. [](#improved)
+	* Moved breadcrumbs to header. Visible to `item`-like pages only, but can be forced to be shown or hidden through setting `partials.breadcrumbs.toggle` in your page to true or false.
 
 # v1.0.4
 ## 01/27/2023
