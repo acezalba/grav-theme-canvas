@@ -125,7 +125,7 @@ page.header.content.items == '@self.modular') %}
   {# use the first image of the page as the page preview #}
   {% set first_image = (page.media|first).filename %}
   {% set featured_image_url = canonical_url ~ '/' ~ first_image %}
-{% elseif theme_config.media.site_featured_image %}
+{% elseif site_featured_image %}
   {# Load the custom site-level preview image defined in the theme settings #}
   {% set theme_user_dir =  url('user://images/') %}
   {% set featured_image_url = base_url_absolute|trim('/', 'right') ~ theme_user_dir ~ '/' ~ site_featured_image_file %}

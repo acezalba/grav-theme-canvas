@@ -1,3 +1,9 @@
+# v2.4.0
+## 05/09/2023
+
+1. [](#bugfix)
+	* Fixed featured image bug caused by blueprint system upgrade.
+
 # v2.3.0
 ## 05/09/2023
 
