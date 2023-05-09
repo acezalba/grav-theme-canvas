@@ -95,6 +95,15 @@ page.header.content.items == '@self.modular') %}
   {% set meta_description = "Join me on my growth and journey" %}
 {% endif %}
 
+{# Date Published #}
+{% if page.header.publish_date is null %}
+  {% set date_published_raw = page.date %}
+  {% set date_published = date_published_raw|date("F j, Y") %}
+{% else %}
+  {% set date_published_raw = page.header.publish_date %}
+  {% set date_published = date_published_raw|date("F j, Y") %}  
+{% endif %}
+
 {# Preview image #}
 {# Site-level custom preview image #}
 {% set site_featured_image = theme_config.media.featured_image.file %}

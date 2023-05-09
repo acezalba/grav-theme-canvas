@@ -3,7 +3,7 @@ For seo-related metadata values, see
 partials/head/seo.html.twig #}
 
   <p>By {{ author_name }}</p>
-  <p>Published on {{ page.date|date("F j, Y, g:i a") }}</p>
+  <p>Published on {{ date_published_raw|date("F j, Y, g:i a") }}</p>
   {% if page.taxonomy.category %}
     <p>Category: 
     {% for category in page.taxonomy.category %}
