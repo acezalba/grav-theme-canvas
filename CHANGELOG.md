@@ -1,3 +1,10 @@
+# v2.3.0
+## 05/09/2023
+
+1. [](#bugfix)
+	* Fixed date display behavior to prefer a hardcoded `publish_date` over the usual `page`.
+	* Re-committed test files for quark-based themes in the `_demo` folder.
+
 # v2.2.0
 ## 05/08/2023
 
