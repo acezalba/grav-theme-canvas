@@ -1,3 +1,10 @@
+# v2.5.0
+## 05/14/2023
+
+1. [](#bugfix)
+	* Fixed subtitle bug potentially due to weird header parsing.
+	* Fixed theme blueprints due to weird name collision.
+
 # v2.4.0
 ## 05/09/2023
 
