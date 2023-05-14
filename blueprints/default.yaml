@@ -26,8 +26,8 @@ form:
                   highlight: 1
                   default: 1
                   options:
-                    1: Yes
-                    0: No
+                    1: Enable
+                    0: Disable
                   validate:
                     type: bool
                 header.media.featured_image.file:
@@ -50,14 +50,14 @@ form:
                   label: How this works
                   markdown: true
                   content: In pages that are not set to the home page, the header uses the page summary as a subtitle. Use the settings below to disable it.
-                header.partials.page_header.subtitle.toggle:
+                header.partials.header_subtitle.toggle:
                   type: toggle
-                  label: Turn header subtitle on or off
+                  label: Enable header subtitle
                   highlight: 1
                   default: 1
                   options:
-                    1: On
-                    0: Off
+                    1: Enable
+                    0: Disable
                   validate:
                     type: bool
             item_settings_section:
