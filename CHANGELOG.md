@@ -1,3 +1,9 @@
+# v2.6.0
+## 05/14/2023
+
+1. [](#bugfix)
+	* Disable use of the enable_subtitle header.
+
 # v2.5.0
 ## 05/14/2023
 
