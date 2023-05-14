@@ -50,7 +50,7 @@ form:
                   label: How this works
                   markdown: true
                   content: In pages that are not set to the home page, the header uses the page summary as a subtitle. Use the settings below to disable it.
-                header.partials.header.subtitle.toggle:
+                header.partials.page_header.subtitle.toggle:
                   type: toggle
                   label: Turn header subtitle on or off
                   highlight: 1
