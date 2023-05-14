@@ -32,7 +32,7 @@ page.header.content.items == '@self.modular') %}
 {% endif %}
 
 {# Toggle for both metadata description and header #}
-{% if page.header.enable_subtitle is null or page.header.partials.header_subtitle.toggle is null %}
+{% if page.header.partials.header_subtitle.toggle is null %}
   {% set enable_subtitle = true %}
 {% else %}
   {% set enable_subtitle = page.header.partials.header_subtitle.toggle %}  
