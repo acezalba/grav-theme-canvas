@@ -2,6 +2,7 @@
 {# Browsers Meta #}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta itemscope itemtype="https://schema.org/WebSite" />
 
 {# SEO Meta #}
 <title>{% if meta_title %}{{ meta_title }}{% endif %}</title>
@@ -23,7 +24,7 @@
 {% if meta.property %}property="{{ meta.property|e }}" {% endif %}
 {% if meta.content %}content="{{ meta.content|raw }}" {% endif %}>
 {% endfor %}
-      
+
 {# Social Media Metadata #}
 <meta property="og:type" content="website">
 <meta property="twitter:card" content="summary_large_image">
@@ -61,7 +62,7 @@
   "url": "{{ canonical_url }}",
   "image": {
     "@type": "ImageObject",
-    "url": "{{ preview_image_url }}",
+    "url": "{{ preview_image_url }}"
   },
   "author": {
     "@type": "Person",
@@ -77,7 +78,7 @@
 explicit definition of content.items in the template
 for the feed to work, else it will just render the page #}
 {% if config.plugins["feed"].enabled and
- (page.template() in blog_alias) and 
+ (page.template() in blog_alias) and
  page.header.content.items %}
   <link rel="alternate" type="application/atom+xml" title="{{ page.title }} feed" href="{{ canonical_url }}.atom" />
   <link rel="alternate" type="application/rss+xml" title="{{ page.title }} feed" href="{{ canonical_url }}.rss" />

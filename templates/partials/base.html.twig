@@ -35,7 +35,7 @@ page.header.content.items == '@self.modular') %}
 {% if page.header.partials.header_subtitle.toggle is null %}
   {% set enable_subtitle = true %}
 {% else %}
-  {% set enable_subtitle = page.header.partials.header_subtitle.toggle %}  
+  {% set enable_subtitle = page.header.partials.header_subtitle.toggle %}
 {% endif %}
 
 {# Placement for metadata attributes in item templates #}
@@ -59,7 +59,7 @@ page.header.content.items == '@self.modular') %}
 {# Favicon = favicon_file_url #}
 {% set favicon = theme_config.media.favicon.file %}
 {% set favicon_file = (favicon|first).name %}
-{% if theme_config.media.favicon %} 
+{% if theme_config.media.favicon %}
   {% set favicon_user_dir = url('user://images/') %}
   {% set favicon_file_url =  home_url|trim('/', 'right') ~ favicon_user_dir ~ '/' ~ favicon_file %}
 {% else %}
@@ -101,7 +101,7 @@ page.header.content.items == '@self.modular') %}
   {% set date_published = date_published_raw|date("F j, Y") %}
 {% else %}
   {% set date_published_raw = page.header.publish_date %}
-  {% set date_published = date_published_raw|date("F j, Y") %}  
+  {% set date_published = date_published_raw|date("F j, Y") %}
 {% endif %}
 
 {# Preview image #}
@@ -132,14 +132,13 @@ page.header.content.items == '@self.modular') %}
 {% else %}
   {# Load the default preview image bundled with the theme #}
   {% set default_featured_image_url =  url('theme://assets/image/preview-image.png') %}
-  {% set featured_image_url = base_url_absolute|trim('/', 'right') ~ default_featured_image_url %} 
+  {% set featured_image_url = base_url_absolute|trim('/', 'right') ~ default_featured_image_url %}
 {% endif %}
 
 {# ===================================================== #}
 
 <!DOCTYPE html>
-<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}"
-itemscope itemtype="https://schema.org/Website">
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}" xmlns="http://www.w3.org/1999/xhtml" xmlns:itemscope="http://www.w3.org/1999/xhtml">
 <head>
 {% block head %}
 
