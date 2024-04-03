@@ -61,12 +61,12 @@
   "name": "{{ site_title }}",
   "url": "{{ canonical_url }}",
   "image": {
-    "@type": "ImageObject",
-    "url": "{{ preview_image_url }}"
+  "@type": "ImageObject",
+  "url": "{{ preview_image_url }}"
   },
   "author": {
-    "@type": "Person",
-    "name": "{{ author_name }}"
+  "@type": "Person",
+  "name": "{{ author_name }}"
   },
   "datePublished": "{{ date_published }}",
   "description": "{{ meta_description }}"
@@ -78,12 +78,14 @@
 explicit definition of content.items in the template
 for the feed to work, else it will just render the page #}
 {% if config.plugins["feed"].enabled and
- (page.template() in blog_alias) and
+ (page.template() in blog_templates) and
  page.header.content.items %}
   <link rel="alternate" type="application/atom+xml" title="{{ page.title }} feed" href="{{ canonical_url }}.atom" />
   <link rel="alternate" type="application/rss+xml" title="{{ page.title }} feed" href="{{ canonical_url }}.rss" />
   <link rel="alternate" type="application/json" title="{{ page.title }} feed" href="{{ canonical_url }}.json" />
 {% endif %}
+
+
 
 {# Asset Files #}
 
@@ -93,22 +95,27 @@ for the feed to work, else it will just render the page #}
 {% endblock stylesheets %}
 
 {% block assets deferred %}
-    {{ assets.css()|raw }}
-    {{ assets.js()|raw }}
+  {{ assets.css()|raw }}
+  {{ assets.js()|raw }}
 {% endblock %}
 
 {# Inline Theme Styling #}
 <style>
-  {% if theme_config.color.theme.behavior == 'light' %}
-    {% include 'partials/theme-light.html.twig' %}
+  {% if theme_config.style.color.theme.behavior == 'light' %}
+  {% include 'partials/theme-light.html.twig' %}
   {% endif %}
 
-  {% if theme_config.color.theme.behavior == 'dark' %}
-    {% include 'partials/theme-dark.html.twig' %}
+  {% if theme_config.style.color.theme.behavior == 'dark' %}
+  {% include 'partials/theme-dark.html.twig' %}
   {% endif %}
 
-  {% if theme_config.color.theme.behavior == 'theme_default' %}
-    {% include 'partials/theme-default.html.twig' %}
+  {% if theme_config.style.color.theme.behavior == 'theme_default' %}
+  {% include 'partials/theme-default.html.twig' %}
+  {% endif %}
+
+  {# Inline Global Styling #}
+  {% if theme_config.style.custom.css %}
+  {{ theme_config.style.custom.css }}
   {% endif %}
 </style>
 

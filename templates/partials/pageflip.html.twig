@@ -3,14 +3,14 @@ generate outputs if the parent page collection does not have content.items expli
 pageflip is coded to work if your parent has content.items explicitly defined. The links still work regardless, so you may remove the content.items requirement if you want to code away the sibling titles from the pageflip #}
 
 <section class="pageflip">
-    {% set has_siblings = page.parent.children.count() > 1 %}
-    {% if has_siblings and page.parent.header.content.items %}
-        {% if not page.isLast %}
-            <div><a href="{{ page.prevSibling.url }}">&laquo;{{ page.prevSibling.title }} </a></div>
-        {% endif %}
-
-        {% if not page.isFirst %}
-            <div><a href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }} &raquo;</a></div>
-        {% endif %}
+  {% set has_siblings = page.parent.children.count() > 1 %}
+  {% if has_siblings and page.parent.header.content.items %}
+    {% if not page.isLast %}
+      <div><a href="{{ page.prevSibling.url }}">&laquo;{{ page.prevSibling.title }} </a></div>
     {% endif %}
+
+    {% if not page.isFirst %}
+      <div><a href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }} &raquo;</a></div>
+    {% endif %}
+  {% endif %}
 </section>

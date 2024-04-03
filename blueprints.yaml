@@ -21,7 +21,7 @@ dependencies:
   - { name: form }
   - { name: breadcrumbs }
   - { name: pagination }
-  
+
 # THEME_SPECIFIC SETTINGS
 
 form:
@@ -35,14 +35,14 @@ form:
           type: tab
           title: Colors
           fields:
-            style.colors:
+            style.color:
               type: section
               underline: true
-              title: Theme behavior
+              title: Theme Palette
               fields:
-                style.colors.group:
+                style.color.palette:
                   type: radio
-                  label: Modify how the theme behaves
+                  label: Select active theme palette/mode
                   options:
                     theme_default: Theme Default (change theme according to device settings)
                     light: Use light theme only
@@ -143,6 +143,30 @@ form:
                           type: colorpicker
                           label: Disabled text
                           default: '#111111'
+            style.custom:
+              title: Add custom css and javascript
+              type: section
+              underline: true
+              fields:
+                columns:
+                  type: columns
+                  fields:
+                    custom_css:
+                      type: column
+                      fields:
+                        style.custom.css:
+                          type: textarea
+                          label: Custom CSS
+                          size: large
+                          help: Add your custom global CSS rules here. No need to wrap in <style> tag.
+                    custom_js:
+                      type: column
+                      fields:
+                        style.custom.js:
+                          type: textarea
+                          label: Custom JS
+                          size: large
+                          help: Add your custom global scripts here. No need to wrap <script> tags. Rendered inline at bottom of page.
         layout: # customize layout sections
           type: tab
           title: Layout
@@ -226,6 +250,7 @@ form:
                   label: Upload your custom preview image.
                   help: This is used as your site's preview image for Facebook (OpenGraph) and Twitter when you have no preview-image set per page. Defaults to a theme-based preview image if none uploaded.
                   destination: 'user://images'
+                  default: 'theme://assets/image/preview-image.png'
                   multiple: false
                   avoid_overwriting: false
                   limit: 1

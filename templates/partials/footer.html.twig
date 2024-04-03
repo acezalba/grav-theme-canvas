@@ -1,8 +1,8 @@
 <footer {% if page.template() == 'error' %}class="error"{% endif %}>
 
-  {% if page.template() == 'error' or 
-    theme_config.partials.navigation.where == 'footer' %}
-    {% include 'partials/navigation.html.twig' %}
+  {% if page.template() == 'error' or
+  theme_config.partials.navigation.where == 'footer' %}
+  {% include 'partials/navigation.html.twig' %}
   {% endif %}
 
   <p>
@@ -10,20 +10,18 @@
 	{{ site.title }} &copy; {{ 'now' | date('Y') }}
   {% endblock site_copyright %}
   {% block custom_attribution %}
-    {% set custom_attribution = theme_config.partials.attribution.content %}
-    {% if custom_attribution %}
-         | {{ custom_attribution }}
-    {% endif %}
+  {% set custom_attribution = theme_config.partials.attribution.content %}
+  {% if custom_attribution %}
+     | {{ custom_attribution }}
+  {% endif %}
   {% endblock custom_attribution %}
   </p>
-  
-  {% block theme_attribution %}
-    {% set toggle_theme_attribution = theme_config.partials.footer.theme_attribution.toggle %}
-    {% if toggle_theme_attribution %}
-         <p><a href="{{ grav.theme.homepage }}">{{ grav.theme.name }}</a> theme made with ❤️ by <a href="{{grav.theme.author.url}}">{{ grav.theme.author.name }}</a></p>
-    {% endif %}
-  {% endblock theme_attribution %}
-  
 
-  
+  {% block theme_attribution %}
+  {% set toggle_theme_attribution = theme_config.partials.footer.theme_attribution.toggle %}
+  {% if toggle_theme_attribution %}
+     <p><a href="{{ grav.theme.homepage }}">{{ grav.theme.name }}</a> theme made with ❤️ by <a href="{{grav.theme.author.url}}">{{ grav.theme.author.name }}</a></p>
+  {% endif %}
+  {% endblock theme_attribution %}
+
 </footer>

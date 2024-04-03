@@ -4,28 +4,34 @@
   {% do assets.addCss('theme://assets/css/base.css') %}
 {% endblock stylesheets %}
 
-{% block javascripts %}  
+{% block javascripts %}
+  {# Compatibility block for some grav-injected js #}
 {% endblock javascripts %}
 
 {% block assets deferred %}
-    {{ assets.css()|raw }}
-    {{ assets.js()|raw }}
+  {{ assets.css()|raw }}
+  {{ assets.js()|raw }}
 {% endblock %}
 
 {# Inline Theme Styling #}
 <style>
-  {% set color_group = theme_config.style.colors.group %}
-  
-  {% if color_group == 'light' %}
-    {% include 'partials/theme/light.html.twig' %}
+  {% set palette = theme_config.style.color.palette %}
+
+  {% if palette == 'light' %}
+  {% include 'partials/theme/light.html.twig' %}
   {% endif %}
 
-  {% if color_group == 'dark' %}
-    {% include 'partials/theme/dark.html.twig' %}
+  {% if palette == 'dark' %}
+  {% include 'partials/theme/dark.html.twig' %}
   {% endif %}
 
-  {% if color_group == 'theme_default' %}
-    {% include 'partials/theme/default.html.twig' %}
+  {% if palette == 'theme_default' %}
+  {% include 'partials/theme/default.html.twig' %}
   {% endif %}
 </style>
+
+{% if debug_enabled %}
+  {{ dump("=====") }}
+  {{ dump("Active Theme Palette: ", palette) }}
+{% endif %}
 

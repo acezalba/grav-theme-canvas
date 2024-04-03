@@ -1,3 +1,10 @@
+{# Check if Debug State is present from the PHP DebugBar #}
+{% if config.system.twig.debug
+  and config.system.debugger.enabled %}
+  {% set debug_enabled = true %}
+  {{ dump("Your Grav Canvas is in a debug state. Check settings if this is intended.") }}
+{% endif %}
+
 {# ----- THEME VARIABLES ----- #}
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
@@ -51,7 +58,7 @@ page.header.content.items == '@self.modular') %}
 {% if page.header.partials.breadcrumbs.toggle is null and page_template == 'item' %}
   {% set breadcrumbs_visible = true %}
 {% else %}
-    {% set breadcrumbs_visible = page.header.partials.breadcrumbs.toggle %}
+  {% set breadcrumbs_visible = page.header.partials.breadcrumbs.toggle %}
 {% endif %}
 
 {# SEO #}
@@ -59,12 +66,22 @@ page.header.content.items == '@self.modular') %}
 {# Favicon = favicon_file_url #}
 {% set favicon = theme_config.media.favicon.file %}
 {% set favicon_file = (favicon|first).name %}
-{% if theme_config.media.favicon %}
+{% if favicon_file is not null %}
+  {% set debug_favicon_source = 'User' %}
   {% set favicon_user_dir = url('user://images/') %}
   {% set favicon_file_url =  home_url|trim('/', 'right') ~ favicon_user_dir ~ '/' ~ favicon_file %}
 {% else %}
+  {% set debug_favicon_source = 'Theme' %}
   {% set favicon_default_file = url('theme://assets/image/favicon.png') %}
   {% set favicon_file_url = home_url|trim('/', 'right') ~ favicon_default_file  %}
+{% endif %}
+
+{% if debug_enabled %}
+  {{ dump("=====") }}
+  {{ dump("Favicon file source: ", debug_favicon_source) }}
+  {{ dump("User Favicon: ", favicon) }}
+  {{ dump("User Favicon File: ", favicon_file)  }}
+  {{ dump("Favicon url: ", favicon_file_url ) }}
 {% endif %}
 
 {# Title = meta_title #}
@@ -72,36 +89,70 @@ page.header.content.items == '@self.modular') %}
 {% set site_title = site.title|e %}
 {% if page_title %}
   {% set meta_title = page_title ~ ' | ' ~ site_title %}
+  {% set debug_meta_title_source = "page title ~ site title (templated)" %}
 {% else %}
   {% set meta_title = site_title %}
+  {% set debug_meta_title_source = "site title (default)" %}
+{% endif %}
+
+{% if debug_enabled %}
+  {{ dump("=====") }}
+  {{ dump("Meta Title: ", meta_title) }}
+  {{ dump("Meta Title Source: ", debug_meta_title_source) }}
 {% endif %}
 
 {# Canonical URL #}
 {% set canonical_url = page.url(true, true) %}
+{% if debug_enabled %}
+  {{ dump("=====") }}
+  {{ dump("Canonical url: ", canonical_url) }}
+{% endif %}
 
 {# Author #}
 {% if page.author.name %}
   {% set author_name = page.author.name %}
+  {% set debug_author_name_source = "page-level" %}
 {% else %}
   {% set author_name = site.author.name %}
+  {% set debug_author_name_source = "site-level (default)" %}
+{% endif %}
+{% if debug_enabled %}
+  {{ dump("=====") }}
+  {{ dump("Author: ", author_name) }}
+  {{ dump("Author Source: ", debug_author_name_source) }}
 {% endif %}
 
 {# Description #}
 {% if enable_subtitle and not page.home() %}
+  {% set debug_description = 'Page Summary' %}
   {% set meta_description = page.summary|trim|striptags|convert_encoding('UTF-8', 'HTML-ENTITIES') %}
 {% elseif site.metadata.description %}
+  {% set debug_description = 'User configuration'%}
   {% set meta_description = site.metadata.description %}
 {% else %}
+  {% set debug_description = 'Default value'%}
   {% set meta_description = "Join me on my growth and journey" %}
+{% endif %}
+{% if debug_enabled %}
+  {{ dump("=====") }}
+  {{ dump("Meta Description source: ", debug_description) }}
+  {{ dump("Meta Description value: ", meta_description) }}
 {% endif %}
 
 {# Date Published #}
 {% if page.header.publish_date is null %}
   {% set date_published_raw = page.date %}
   {% set date_published = date_published_raw|date("F j, Y") %}
+  {% set debug_date_published_source = "Publish_date null, page.data sourced" %}
 {% else %}
   {% set date_published_raw = page.header.publish_date %}
   {% set date_published = date_published_raw|date("F j, Y") %}
+  {% set debug_date_published_source = "page.header.publish_date" %}
+{% endif %}
+{% if debug_enabled %}
+  {{ dump("=====") }}
+  {{ dump("Date_published source: ", debug_date_published_source) }}
+  {{ dump("Meta Description value: ", date_published) }}
 {% endif %}
 
 {# Preview image #}
@@ -121,18 +172,22 @@ page.header.content.items == '@self.modular') %}
 {% if page.header.media.featured_image.file and page_featured_image %}
   {# Load the custom page-level preview image #}
   {% set featured_image_url = canonical_url ~ '/' ~ page_featured_image_file %}
+  {% set debug_featured_image_url = "Page-level, custom" %}
 {% elseif use_first_image and page.media.items %}
   {# use the first image of the page as the page preview #}
   {% set first_image = (page.media|first).filename %}
   {% set featured_image_url = canonical_url ~ '/' ~ first_image %}
+  {% set debug_featured_image_url = "Page-level, first image" %}
 {% elseif site_featured_image %}
   {# Load the custom site-level preview image defined in the theme settings #}
   {% set theme_user_dir =  url('user://images/') %}
   {% set featured_image_url = base_url_absolute|trim('/', 'right') ~ theme_user_dir ~ '/' ~ site_featured_image_file %}
+  {% set debug_featured_image_url = "Site-level, custom" %}
 {% else %}
   {# Load the default preview image bundled with the theme #}
   {% set default_featured_image_url =  url('theme://assets/image/preview-image.png') %}
   {% set featured_image_url = base_url_absolute|trim('/', 'right') ~ default_featured_image_url %}
+  {% set debug_featured_image_url = "Site-level, default" %}
 {% endif %}
 
 {# ===================================================== #}
@@ -153,6 +208,27 @@ page.header.content.items == '@self.modular') %}
 
 <!-- Site Assets -->
 {% include 'partials/head/assets.html.twig' %}
+
+{# PLUGIN - Feed #}
+{# Note: The plugin requires that there should be an
+explicit definition of content.items in the template
+for the feed to work, else it will just render the page #}
+{% if config.plugins["feed"].enabled and
+(page.template() in blog_templates) and
+page.header.content.items %}
+<!-- Site Feed -->
+    {% include 'partials/head/feed.html.twig' %}
+{% endif %}
+
+{% if debug_enabled %}
+    {{ dump("=====") }}
+    {{ dump("The Feed Plugin requires hardcoded content.items in page.") }}
+    {{ dump("Feed Plugin: ", config.plugins["feed"].enabled) }}
+    {% set debug_blog_template = page.template() in blog_templates %}
+    {{ dump("Page is a blog template? ", debug_blog_template) }}
+    {% set debug_content_items_present = page.header.content.items %}
+    {{ dump("Content.items settings? ", debug_content_items_present) }}
+{% endif %}
 
 {% endblock head %}
 </head>
@@ -181,6 +257,10 @@ page.header.content.items == '@self.modular') %}
 
 {% block bottom %}
   {{ assets.js('bottom')|raw }}
+  {{ assets.js('bottom')|raw }}
+  <script>
+    {{ theme_config.style.custom.js }}
+  </script>
 {% endblock bottom%}
 
 </body>

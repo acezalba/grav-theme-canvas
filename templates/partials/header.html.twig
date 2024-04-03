@@ -2,29 +2,29 @@
 
 {% block breadcrumbs %}
   {% if config.plugins.breadcrumbs.enabled and breadcrumbs_visible %}
-    {% include 'partials/breadcrumbs.html.twig' %}
-  {% endif %} 
+  {% include 'partials/breadcrumbs.html.twig' %}
+  {% endif %}
 {% endblock breadcrumbs %}
 
   {% if page.home() %}
-    <h1><a href="{{ home_url }}">{{ site.title }}</a></h1>
-    <p>{{ meta_description }}</p>
+  <h1><a href="{{ home_url }}">{{ site.title }}</a></h1>
+  <p>{{ meta_description }}</p>
   {% elseif page_template == 'item' and metadata_location == 'header' %}
-    <h1><a href="{{ base_url }}">{{ page.title }}</a></h1> 
-    {% if enable_subtitle %}
-      <p>{{ page.summary|raw }}</p>
-    {% endif %}
-    {% include 'partials/metadata.html.twig' %}
+  <h1><a href="{{ base_url }}">{{ page.title }}</a></h1>
+  {% if enable_subtitle %}
+    <p>{{ page.summary|raw }}</p>
+  {% endif %}
+  {% include 'partials/metadata.html.twig' %}
   {% else %}
-    <h1><a href="{{ base_url }}">{{ page.title }}</a></h1>
-    {% if enable_subtitle %}
-      <p>{{ page.summary|raw }}</p>
-    {% endif %}
+  <h1><a href="{{ base_url }}">{{ page.title }}</a></h1>
+  {% if enable_subtitle %}
+    <p>{{ page.summary|raw }}</p>
+  {% endif %}
   {% endif %}
 
   {% if theme_config.partials.navigation.where == 'header' %}
-    {% block navigation %}
-      {% include 'partials/navigation.html.twig' %}
-    {% endblock navigation %}
+  {% block navigation %}
+    {% include 'partials/navigation.html.twig' %}
+  {% endblock navigation %}
   {% endif %}
 </header>

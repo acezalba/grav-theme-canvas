@@ -1,8 +1,8 @@
 # THEME DEFAULT SETTINGS
 
 style:
-  colors:
-    group: 'theme_default'
+  color:
+    palette: 'theme_default'
     custom:
       light:
         bg: '#ffffff'
