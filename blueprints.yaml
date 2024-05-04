@@ -3,24 +3,25 @@
 name: Canvas
 slug: canvas
 type: theme
-version: 2.6.0
+version: 3.0.0
 description: A starter theme for Grav CMS. Minimalist and feature-rich.
 icon: star
 author:
-    name: Ace Z. Alba
-    url: https://www.acezalba.com
+  name: Ace Z. Alba
+  url: https://www.acezalba.com
 homepage: https://github.com/acezalba/canvas
 demo: https://canvas.acezalba.com/
 keywords: minimal, blog, starter
 bugs: https://github.com/acezalba/canvas/issues
 license: MIT
 dependencies:
-  - { name: grav, version: '>=1.7' }
+  - { name: grav, version: ">=1.7" }
   - { name: sitemap }
   - { name: feed }
   - { name: form }
   - { name: breadcrumbs }
   - { name: pagination }
+  - { name: rss }
 
 # THEME_SPECIFIC SETTINGS
 
@@ -66,39 +67,39 @@ form:
                         style.color.custom.light.bg:
                           type: colorpicker
                           label: Background color
-                          default: '#fffff'
+                          default: "#fffff"
                         style.color.custom.light.accent_bg:
                           type: colorpicker
                           label: Background accent
-                          default: '#f5f7ff'
+                          default: "#f5f7ff"
                         style.color.custom.light.text:
                           type: colorpicker
                           label: Text color
-                          default: '#212121'
+                          default: "#212121"
                         style.color.custom.light.text_light:
                           type: colorpicker
                           label: Light text
-                          default: '#585858'
+                          default: "#585858"
                         style.color.custom.light.border:
                           type: colorpicker
                           label: Borders
-                          default: '#d8dae1'
+                          default: "#d8dae1"
                         style.color.custom.light.accent:
                           type: colorpicker
                           label: Accent color
-                          default: '#004d40'
+                          default: "#004d40"
                         style.color.custom.light.code:
                           type: colorpicker
                           label: Code snippets
-                          default: '#795548'
+                          default: "#795548"
                         style.color.custom.light.preformatted:
                           type: colorpicker
                           label: Preformatted text
-                          default: '#444444'
+                          default: "#444444"
                         style.color.custom.light.disabled:
                           type: colorpicker
                           label: Disabled text
-                          default: '#efefef'
+                          default: "#efefef"
                     dark_column:
                       name: dark
                       type: column
@@ -110,39 +111,39 @@ form:
                         style.color.custom.dark.bg:
                           type: colorpicker
                           label: Background color
-                          default: '#212121'
+                          default: "#212121"
                         style.color.custom.dark.accent_bg:
                           type: colorpicker
                           label: Background accent
-                          default: '#2b2b2b'
+                          default: "#2b2b2b"
                         style.color.custom.dark.text:
                           type: colorpicker
                           label: Text color
-                          default: '#dcdcdc'
+                          default: "#dcdcdc"
                         style.color.custom.dark.text_light:
                           type: colorpicker
                           label: Light text
-                          default: '#ababab'
+                          default: "#ababab"
                         style.color.custom.dark.border:
                           type: colorpicker
                           label: Borders
-                          default: '#666'
+                          default: "#666"
                         style.color.custom.dark.accent:
                           type: colorpicker
                           label: Accent color
-                          default: '#00bcd4'
+                          default: "#00bcd4"
                         style.color.custom.dark.code:
                           type: colorpicker
                           label: Code snippets
-                          default: '#ea80fc'
+                          default: "#ea80fc"
                         style.color.custom.dark.preformatted:
                           type: colorpicker
                           label: Preformatted text
-                          default: '#cccccc'
+                          default: "#cccccc"
                         style.color.custom.dark.disabled:
                           type: colorpicker
                           label: Disabled text
-                          default: '#111111'
+                          default: "#111111"
             style.custom:
               title: Add custom css and javascript
               type: section
@@ -189,11 +190,11 @@ form:
               underline: true
               fields:
                 partials.footer.attribution.content:
-                    type: text
-                    autofocus: true
-                    label: Custom attribution
-                    help: A one-liner section for copyright or similar.
-                    markdown: true
+                  type: text
+                  autofocus: true
+                  label: Custom attribution
+                  help: A one-liner section for copyright or similar.
+                  markdown: true
                 partials.footer.theme_attribution.toggle:
                   type: toggle
                   label: Keep theme attribution?
@@ -233,7 +234,7 @@ form:
                 media.favicon.file:
                   type: file
                   label: Upload your custom favicon
-                  destination: 'user://images'
+                  destination: "user://images"
                   multiple: false
                   avoid_overwriting: yes
                   limit: 1
@@ -249,8 +250,8 @@ form:
                   type: file
                   label: Upload your custom preview image.
                   help: This is used as your site's preview image for Facebook (OpenGraph) and Twitter when you have no preview-image set per page. Defaults to a theme-based preview image if none uploaded.
-                  destination: 'user://images'
-                  default: 'theme://assets/image/preview-image.png'
+                  destination: "user://images"
+                  default: "theme://assets/image/preview-image.png"
                   multiple: false
                   avoid_overwriting: false
                   limit: 1
