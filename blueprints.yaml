@@ -3,16 +3,16 @@
 name: Canvas
 slug: canvas
 type: theme
-version: 3.0.0
+version: 3.0.1
 description: A starter theme for Grav CMS. Minimalist and feature-rich.
 icon: star
 author:
   name: Ace Z. Alba
   url: https://www.acezalba.com
-homepage: https://github.com/acezalba/canvas
+homepage: https://github.com/grav-theme-acezalba/canvas
 demo: https://canvas.acezalba.com/
 keywords: minimal, blog, starter
-bugs: https://github.com/acezalba/canvas/issues
+bugs: https://github.com/grav-theme-acezalba/canvas/issues
 license: MIT
 dependencies:
   - { name: grav, version: ">=1.7" }

@@ -1,3 +1,10 @@
+# v3.0.1
+
+## 05/05/2024
+
+1. [](#bugfix)
+   - Updated repository links
+
 # v3.0.0
 
 ## 05/04/2024
