@@ -9,10 +9,10 @@ icon: star
 author:
   name: Ace Z. Alba
   url: https://www.acezalba.com
-homepage: https://github.com/acezalba/canvas
+homepage: https://github.com/acezalba/grav-theme-canvas
 demo: https://canvas.acezalba.com/
 keywords: minimal, blog, starter
-bugs: https://github.com/acezalba/canvas/issues
+bugs: https://github.com/acezalba/grav-theme-canvas/issues
 license: MIT
 dependencies:
   - { name: grav, version: ">=1.7" }
