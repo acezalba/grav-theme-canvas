@@ -1,3 +1,10 @@
+# v3.0.2
+
+## 08/08/2024
+
+1. [](#bugfix)
+   - Removed a duplicate line causing js assets to be loaded twice.
+
 # v3.0.1
 
 ## 05/05/2024
