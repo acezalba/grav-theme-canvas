@@ -15,7 +15,7 @@
         <span itemscope itemtype="http://schema.org/Thing" itemprop="item" itemid="{{ crumb.url|e }}">
           <span itemprop="name">{{ crumb.menu|e|trim }}</span></span>
       {% endif %}
-      <span class="divider">&raquo;</span class="divider">
+      <span class="divider">&raquo;</span>
     {% else %}
       {% if breadcrumbs_config.link_trailing %}
         <a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="{{ crumb.url|e }}" itemid="{{ crumb.url|e }}"><span itemprop="name">{{ crumb.menu|e|trim }}</span></a>
