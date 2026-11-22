@@ -16,7 +16,7 @@ keywords: minimal, blog, starter
 bugs: https://github.com/acezalba/grav-theme-canvas/issues
 license: MIT
 dependencies:
-  - { name: grav, version: ">=1.7" }
+  - { name: grav, version: ">=1.7.0 <2.0.0" }
   - { name: sitemap }
   - { name: feed }
   - { name: form }
