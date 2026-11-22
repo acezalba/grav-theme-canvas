@@ -125,7 +125,7 @@ page.header.content.items == '@self.modular') %}
 {# Description #}
 {% if enable_subtitle and not page.home() %}
   {% set debug_description = 'Page Summary' %}
-  {% set meta_description = page.summary|trim|striptags|convert_encoding('UTF-8', 'HTML-ENTITIES') %}
+  {% set meta_description = page.summary|trim|striptags|html_entity_decode %}
 {% elseif site.metadata.description %}
   {% set debug_description = 'User configuration'%}
   {% set meta_description = site.metadata.description %}
