@@ -2,6 +2,8 @@
 
 A starter theme for Grav CMS. Designed for small, text-heavy personal sites and blogs. Uses [sanitize.css](https://csstools.github.io/sanitize.css/) and a customized [simple.css](https://simplecss.org/). Mostly classless.
 
+!! Notice: this theme is going to be archived soon. Kindly switch to another theme if you want to maintain compatibility towards future grav releases.
+
 ![Canvas Screenshot](screenshot.jpg)
 
 ## Features
