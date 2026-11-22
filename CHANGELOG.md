@@ -1,3 +1,11 @@
+# v3.0.5
+## 11/22/2026
+
+1. [](#feature)
+  - Deprecation notice: Updated `blueprints.yaml` to declare non-support for Grav 2.0 and above. Active feature releases are suspended; critical patches may still be committed directly to the repository.
+2. [](#bugfix)
+  - Fixed HTML entity parsing error in meta description calculation (`partials/base.html.twig`).
+
 # v3.0.3
 ## 10/03/2024
 
