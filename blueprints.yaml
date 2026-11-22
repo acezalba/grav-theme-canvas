@@ -3,8 +3,8 @@
 name: Canvas
 slug: canvas
 type: theme
-version: 3.0.3
-description: A starter theme for Grav CMS. Minimalist and feature-rich.
+version: 3.0.4
+description: Notice: This theme is no longer being actively maintained. A starter theme for Grav CMS. Minimalist and feature-rich.
 icon: star
 author:
   name: Ace Z. Alba
